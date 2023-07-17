@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+       http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+
+
+<!--    Spring扫描的包-->
+    <context:component-scan base-package="com.example.chatApp.dao"></context:component-scan>
+    <context:component-scan base-package="com.example.chatApp.service"></context:component-scan>
+    <mybatis-spring:scan base-package="com.example.chatApp.mapper"></mybatis-spring:scan>
+
+
+    <!-- MyBatis-德鲁伊连接池 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+    </bean>
+
+    <!-- 德鲁伊连接池 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/chat?serverTimezone=Asia/Shanghai&amp;characterEncoding=utf-8"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="wanmait"></property>
+
+        <!-- 初始连接数 -->
+        <property name="initialSize" value="3"></property>
+        <!-- 最少活动连接数 -->
+        <property name="minIdle" value="3"></property>
+        <!-- 最大连接数 -->
+        <property name="maxActive" value="10"></property>
+        <!-- 最长等待时间 -->
+        <property name="maxWait" value="10000"></property>
+        <property name="filters" value="mergeStat"></property>
+    </bean>
+
+</beans>

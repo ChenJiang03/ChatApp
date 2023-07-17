@@ -776,8 +776,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button type="button" class="btn btn-primary">Update Details</button>
-                                                    <button type="button" class="btn btn-link">Cancel</button>
+                                                    <button type="button" class="btn btn-primary">更新细节</button>
+                                                    <button type="button" class="btn btn-link">取消</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -786,11 +786,11 @@
                             </div>
                             <div class="row justify-content-between mt-4">
                                 <div class="col-12 col-md-6">
-                                    <h5>Delete your account</h5>
-                                    <p class="text-muted mb-md-0">Please note, deleting your account is a permanent action and will no be recoverable once completed.</p>
+                                    <h5>删除你的账号</h5>
+                                    <p class="text-muted mb-md-0">请注意，点击删除账号将会永久删除账号并且一旦删除账号将无法撤回。</p>
                                 </div>
                                 <div class="col-auto">
-                                    <button class="btn btn-danger">Delete</button>
+                                    <button class="btn btn-danger">删除</button>
                                 </div>
                             </div>
                         </div>
@@ -799,7 +799,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="alert alert-danger">
-                                        <i class="zmdi zmdi-info me-1"></i> You are near your API limits.
+                                        <i class="zmdi zmdi-info me-1"></i> 你即将达到API上限.
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
@@ -1162,11 +1162,11 @@
                         <div class="tab-pane fade" id="setting-security" role="tabpanel">
                             <div class="row justify-content-between mb-4">
                                 <div class="col-12 col-md-6">
-                                    <h5>Change your password</h5>
-                                    <p class="text-muted mb-md-0">We will email you a confirmation when changing your password, so please expect that email after submitting.</p>
+                                    <h5>修改密码</h5>
+                                    <p class="text-muted mb-md-0">当您提交密码更改请求后，我们将向您发送一封确认电子邮件，请在提交后留意您的电子邮件。</p>
                                 </div>
                                 <div class="col-auto">
-                                    <button class="btn btn-warning">Forgot your password?</button>
+                                    <button class="btn btn-warning">忘记密码了？</button>
                                 </div>
                             </div>
                             <div class="row g-3">
@@ -1177,32 +1177,31 @@
                                             <form class="row">
                                                 <div class="col-lg-4 col-md-12">
                                                     <div class="form-group mb-3">
-                                                        <label>Current password</label>
+                                                        <label>旧密码</label>
                                                         <input type="email" class="form-control">
                                                     </div>
                                                     <div class="form-group mb-3">
-                                                        <label>New password</label>
+                                                        <label>新密码</label>
                                                         <input type="email" class="form-control">
                                                     </div>
                                                     <div class="form-group mb-3">
-                                                        <label>Confirm password</label>
+                                                        <label>请再输入密码</label>
                                                         <input type="email" class="form-control">
                                                     </div>
-                                                    <button type="button" class="btn btn-primary">Update Password</button>
-                                                    <button type="button" class="btn btn-link">Cancel</button>
+                                                    <button type="button" class="btn btn-primary">更新密码</button>
+                                                    <button type="button" class="btn btn-link">取消</button>
                                                 </div>
                                                 <div class="col-lg-8 col-md-12">
 
                                                     <div class="card bg-light border">
                                                         <div class="card-body">
-                                                            <p class="mb-2">Password requirements</p>
-                                                            <p class="small text-muted mb-2">To create a new password, you have to meet all of the following requirements:</p>
+                                                            <p class="mb-2">密码要求</p>
+                                                            <p class="small text-muted mb-2">要创建一个新密码，您必须满足以下所有要求：</p>
 
                                                             <ul class="small text-muted ps-4 mb-0">
-                                                                <li>Minimum 8 character</li>
-                                                                <li>At least one special character</li>
-                                                                <li>At least one number</li>
-                                                                <li>Can’t be the same as a previous password</li>
+                                                                <li>5-20位字符</li>
+                                                                <li>字符由大小写字母，数字，下划线组成</li>
+                                                                <li>不能和旧密码一样</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -1214,11 +1213,11 @@
                             </div>
                             <div class="row justify-content-between mt-4 mb-4">
                                 <div class="col-12 col-md-6">
-                                    <h5>Device History</h5>
-                                    <p class="text-muted mb-md-0">If you see a device here that you believe wasn’t you, please contact our account fraud department immediately.</p>
+                                    <h5>登录设备历史</h5>
+                                    <p class="text-muted mb-md-0">如果你在这里看到一个你认为不是你的设备，请立即联系我们的账户欺诈部门。</p>
                                 </div>
                                 <div class="col-auto">
-                                    <button class="btn btn-dark">Log out all devices</button>
+                                    <button class="btn btn-dark">登出所有设备</button>
                                 </div>
                             </div>
                             <div class="row">
@@ -1294,7 +1293,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-12">
                                     <div class="mb-4">
-                                        <h6>Useful tips</h6>
+                                        <h6>有用的小技巧</h6>
                                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
                                         <div class="list-group custom">
                                             <a class="list-group-item" href="#"><i class="zmdi zmdi-circle small me-2 text-danger"></i>Lorem ipsum</a>
@@ -1304,16 +1303,16 @@
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <h6>Can't find the answer? </h6>
+                                        <h6>找不到答案？ </h6>
                                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-                                        <a href="#" class="btn btn-primary">Contact us</a>
+                                        <a href="#" class="btn btn-primary">联系我们</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-9 col-md-12">
 
                                     <div class="card">
                                         <div class="card-body">
-                                            <h6>General</h6>
+                                            <h6>通用</h6>
                                             <div id="demo-gen-faq" class="accordion border-bottom mb-4">
                                                 <div class="mb-1">
                                                     <div class="py-2 px-3 bg-light">
@@ -1377,7 +1376,7 @@
                                                 </div>
                                             </div>
 
-                                            <h6 class="pad-all bord-btm text-thin">Payment</h6>
+                                            <h6 class="pad-all bord-btm text-thin">支付</h6>
                                             <div id="demo-pym-faq" class="accordion">
                                                 <div class="mb-1">
                                                     <div class="py-2 px-3 bg-light">

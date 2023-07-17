@@ -3,6 +3,7 @@ package com.example.chatApp.webController;
 import com.example.chatApp.mapper.UserMapper;
 import com.example.chatApp.pojo.User;
 import com.example.chatApp.service.UserService;
+import com.example.chatApp.util.CodeMeessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +28,17 @@ public class CommonWebController
     {
 
     }
+    @GetMapping("/web/sendCode")
+    @ResponseBody
+    public String sendCode(String phone){
+        String code = CodeMeessageUtil.sendCode(phone);
+        if (code == null)
+        {
+            return "fail";
+        }
+        return "success";
+    }
+
     @PostMapping("/web/login")
     public String login(User user, HttpSession session){
         User findUser = userService.findByUsernameAndPassword(user);

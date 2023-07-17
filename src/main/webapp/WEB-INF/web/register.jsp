@@ -51,7 +51,7 @@
                                 <div class="input-group mb-2">
                                     <input type="text" class="form-control form-control-lg" name="phone" id="phone" placeholder="请输入手机号">
                                     <span id="phoneMsg"></span>
-                                    <input type="button" class="form-control form-control-lg" value="点击获取验证码" disabled>
+                                    <input type="button" id="getCodeBtn" class="form-control form-control-lg" value="点击获取验证码">
                                 </div>
 
                                 <div class="input-group mb-2">
@@ -197,6 +197,22 @@
                 //阻止表单提交
                 return false;
             }
+        });
+
+        //点击获取验证码
+        $("#getCodeBtn").click(function (){
+            var phoneNum = $("#phone").val();
+            $.get("${path}/web/sendCode?phone="+phoneNum,function (data){
+                console.log(data);
+                if (data == "fail")
+                {
+                    alert("发送验证码失败，请重试");
+                }
+                else if (data == "success")
+                {
+                    alert("验证码发送成功！");
+                }
+            });
         });
     });
 

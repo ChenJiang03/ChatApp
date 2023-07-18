@@ -31,6 +31,7 @@ public class CommonWebController
     @GetMapping("/web/sendCode")
     @ResponseBody
     public String sendCode(String phone){
+        System.out.println(phone);
         String code = CodeMeessageUtil.sendCode(phone);
         if (code == null)
         {
@@ -45,7 +46,7 @@ public class CommonWebController
         if (findUser != null)
         {
             session.setAttribute("user", findUser);
-            return "redirect:/index";
+            return "redirect:/userCenter/updateInfo";
         }
         return "redirect:/web/login";
     }

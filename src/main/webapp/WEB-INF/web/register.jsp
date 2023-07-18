@@ -202,6 +202,7 @@
         //点击获取验证码
         $("#getCodeBtn").click(function (){
             var phoneNum = $("#phone").val();
+            console.log(phoneNum);
             $.get("${path}/web/sendCode?phone="+phoneNum,function (data){
                 console.log(data);
                 if (data == "fail")
@@ -213,6 +214,29 @@
                     alert("验证码发送成功！");
                 }
             });
+
+            var button = document.getElementById('getCodeBtn');
+            button.disabled = true; // 设置按钮为不可点击状态
+
+            var secondsLeft = 59;
+            updateTime();
+
+            var countdownInterval = setInterval(updateTime, 1000); // 每秒更新倒计时
+
+            setTimeout(function() {
+                button.disabled = false; // 60秒后将按钮设置为可点击状态
+                clearInterval(countdownInterval); // 清除倒计时定时器
+                button.value = '点击获取验证码'; // 清空倒计时显示
+            }, secondsLeft * 1000);
+
+            function updateTime() {
+                var minutes = Math.floor(secondsLeft / 60);
+                var seconds = secondsLeft % 60;
+
+                button.value = "（"+seconds + '秒）';
+                secondsLeft--;
+            }
+
         });
     });
 

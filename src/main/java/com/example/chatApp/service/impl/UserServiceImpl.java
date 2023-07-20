@@ -22,13 +22,36 @@ public class UserServiceImpl implements UserService
     @Override
     public void update(User object)
     {
+    }
 
+    @Override
+    public void updateUserPicture(User object)
+    {
+        userMapper.updateUserPicture(object);
+    }
+
+    @Override
+    public void updateUserPassword(User object)
+    {
+        userMapper.updateUserPassword(object);
+    }
+
+    @Override
+    public void updateUserPhone(User object)
+    {
+        userMapper.updateUserPhone(object);
+    }
+
+    @Override
+    public void updateUserInfo(User object)
+    {
+        userMapper.updateUserInfo(object);
     }
 
     @Override
     public void delete(Integer id)
     {
-
+        userMapper.deleteByPrimaryKey(id);
     }
 
     @Override
@@ -60,4 +83,5 @@ public class UserServiceImpl implements UserService
     {
         return userMapper.selectByUsernameAndPassword(user);
     }
+
 }

@@ -75,6 +75,8 @@
           <element id="library" level="project" name="Maven: com.aliyun:tea:1.2.7" />
           <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.12.13" />
           <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.15.0" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.5" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.11.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

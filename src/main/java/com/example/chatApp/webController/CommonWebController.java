@@ -30,15 +30,28 @@ public class CommonWebController
     }
     @GetMapping("/web/sendCode")
     @ResponseBody
-    public String sendCode(String phone){
-        System.out.println(phone);
+    public String sendCode(String phone, HttpSession session){
         String code = CodeMeessageUtil.sendCode(phone);
+        session.setAttribute("verifyCode", code);
         if (code == null)
         {
             return "fail";
         }
         return "success";
     }
+
+    @GetMapping("/web/verifyCode")
+    @ResponseBody
+    public String verifyCode(String code, HttpSession session)
+    {
+        String verifyCode = (String) session.getAttribute("verifyCode");
+        if (verifyCode.equals(code))
+        {
+            return "success";
+        }
+        return "fail";
+    }
+
 
     @PostMapping("/web/login")
     public String login(User user, HttpSession session){

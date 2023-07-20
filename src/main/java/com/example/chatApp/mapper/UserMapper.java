@@ -24,4 +24,13 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    void updateUserInfo(User record);
+
+    void updateUserPicture(User record);
+
+    void updateUserPassword(User record);
+
+    void updateUserPhone(User record);
+
 }

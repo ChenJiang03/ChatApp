@@ -7,4 +7,15 @@ public interface UserService extends CommonService<User>
     User login(User user);
 
     User findByUsernameAndPassword(User user);
+
+    void update(User user);
+
+    void updateUserInfo(User object);
+
+    void updateUserPicture(User object);
+
+    void updateUserPassword(User object);
+
+    void updateUserPhone(User object);
+
 }

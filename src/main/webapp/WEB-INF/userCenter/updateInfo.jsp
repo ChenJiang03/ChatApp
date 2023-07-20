@@ -13,8 +13,9 @@
 
 <link rel="stylesheet" href="${path}/static/web/fonts/material-icon/css/material-design-iconic-font.min.css">
 <link rel="stylesheet" href="${path}/static/web/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
-
 <link rel="stylesheet" href="${path}/static/web/css/style.min.css">
+<script type="text/javascript" src="${path}/static/web/vendor/jquery/jquery-3.6.4.min.js"></script>
+
 <body class="admin">
 <div id="layout" class="theme-cyan">
 
@@ -63,7 +64,7 @@
         <button type="submit" class="btn sidebar-toggle-btn shadow-sm"><i class="zmdi zmdi-menu"></i></button>
     </div>
 
-
+<%----------------------------------------左边个人信息栏----------------------------------------------------%>
     <div class="sidebar border-end py-xl-4 py-3 px-xl-4 px-3">
         <div class="tab-content">
 
@@ -142,527 +143,6 @@
                 </div>
             </div>
 
-            <div class="tab-pane fade" id="nav-tab-menu" role="tabpanel">
-
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="mb-0 text-primary">Events</h4>
-                    <div>
-                        <button class="btn btn-dark" type="button">Create New</button>
-                    </div>
-                </div>
-
-                <div class="form-group input-group-lg search mb-3">
-                    <i class="zmdi zmdi-search"></i>
-                    <input type="text" class="form-control" placeholder="Search...">
-                </div>
-
-                <div class="card mb-1">
-                    <div class="card-body">
-                        <ul class="menu-list p-0 m-0">
-                            <li class="header text-uppercase">Events App</li>
-                            <li class="active open"><a href="index.html" class="py-2"><i class="zmdi zmdi-home me-3"></i><span>Dashboard</span></a></li>
-                            <li>
-                                <a href="javascript:void(0);" class="py-2 menu-toggle"><i class="zmdi zmdi-calendar-check me-3"></i><span>Events</span></a>
-                                <ul class="ml-menu border-start ps-2 ms-2">
-                                    <li><a href="event-all.html">All Events</a></li>
-                                    <li><a href="event-draft.html">Draft Events</a></li>
-                                    <li><a href="event-my.html">My Events</a></li>
-                                    <li><a href="event-calendar.html">Calendar</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="event-members.html" class="py-2"><i class="zmdi zmdi-accounts-alt me-3"></i><span>Members</span></a></li>
-                            <li><a href="event-message.html" class="py-2"><i class="zmdi zmdi-email me-3"></i><span>Message</span></a></li>
-                            <li><a href="index-chat.html" class="py-2"><i class="zmdi zmdi-comment-more me-3"></i><span>Chat App</span></a></li>
-                            <li class="header text-uppercase mt-3">UPCOMING EVENTS</li>
-                            <li><a href="#" class="py-2"><i class="zmdi zmdi-star-outline me-3"></i><span class="text-truncate">Byron Bay Bluesfest</span></a></li>
-                            <li><a href="#" class="py-2"><i class="zmdi zmdi-star-outline me-3"></i><span class="text-truncate">DC Environmental Film Festival</span></a></li>
-                            <li><a href="#" class="py-2"><i class="zmdi zmdi-star-outline me-3"></i><span class="text-truncate">Vancouver Fashion Week</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <ul class="chat-list mt-3">
-                    <li class="header d-flex justify-content-between ps-3 pe-3 mb-1">
-                        <span>event speaker</span>
-                        <div class="dropdown">
-                            <a class="btn btn-link px-1 py-0 border-0 text-muted dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="zmdi zmdi-plus-circle"></i></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Add New</a>
-                                <a class="dropdown-item" href="#">Create Group</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="online">
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media align-items-center">
-                                    <div class="avatar sm me-3">
-                                        <span class="status rounded-circle"></span>
-                                        <img class="avatar sm rounded-circle" src="${path}/static/web/images/xs/avatar5.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <h6 class="text-truncate mb-0 me-auto">Jason Porter</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="away">
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media align-items-center">
-                                    <div class="avatar sm me-3">
-                                        <span class="status rounded-circle"></span>
-                                        <img class="avatar sm rounded-circle" src="${path}/static/web/images/xs/avatar1.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <h6 class="text-truncate mb-0 me-auto">Michelle Green</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar sm me-3">
-                                        <div class="avatar sm rounded-circle no-image timber">
-                                            <span>UD</span>
-                                        </div>
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">UI-Design Group</h6>
-                                        </div>
-                                        <div class="text-truncate">
-                                            <i class="zmdi zmdi-file-text me-1"></i> North Carolina, CT
-                                            <div class="avatar-list avatar-list-stacked mt-1">
-                                                <img class="avatar xs rounded" src="${path}/static/web/images/xs/avatar5.jpg" alt="" data-bs-toggle="tooltip" data-placement="top" title="Avatar" data-original-title="Sean">
-                                                <img class="avatar xs rounded" src="${path}/static/web/images/xs/avatar6.jpg" alt="" data-bs-toggle="tooltip" data-placement="top" title="Avatar" data-original-title="Martin">
-                                                <img class="avatar xs rounded" src="${path}/static/web/images/xs/avatar1.jpg" alt="" data-bs-toggle="tooltip" data-placement="top" title="Avatar" data-original-title="Terry">
-                                                <img class="avatar xs rounded" src="${path}/static/web/images/xs/avatar4.jpg" alt="" data-bs-toggle="tooltip" data-placement="top" title="Avatar" data-original-title="Michelle">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="tab-pane fade" id="nav-tab-notifications" role="tabpanel">
-
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="mb-0 text-primary">Notifications</h4>
-                    <div>
-                    </div>
-                </div>
-
-                <div class="form-group input-group-lg search mb-3">
-                    <i class="zmdi zmdi-search"></i>
-                    <input type="text" class="form-control" placeholder="Search...">
-                </div>
-
-                <ul class="chat-list animation-li-delay">
-                    <li class="header d-flex justify-content-between ps-3 pe-3 mb-1">
-                        <span>RECENT</span>
-                        <div class="dropdown">
-                            <a class="btn btn-link px-1 py-0 border-0 text-muted dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-filter-list"></i></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar sm me-2">
-                                        <img class="avatar sm rounded-circle" src="${path}/static/web/images/xs/avatar5.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">Jason Porter</h6>
-                                            <p class="small text-muted text-nowrap ms-4 mb-0">11:08 am</p>
-                                        </div>
-                                        <div>changed an issue from "In Progress" to <span class="badge bg-success">Review</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar sm me-2">
-                                        <div class="avatar sm rounded-circle no-image timber">
-                                            <span>UD</span>
-                                        </div>
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">UI-Design Group</h6>
-                                            <p class="small text-muted text-nowrap ms-4 mb-0">11:08 am</p>
-                                        </div>
-                                        <div>
-                                            <i class="zmdi zmdi-file-text me-1"></i> mentioned you in a comment
-                                            <blockquote class="blockquote blockquote-sm ps-2 mt-2 mb-0">
-                                                Nice work, love! You really nailed it. Keep it up!
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar sm me-2">
-                                        <img class="avatar sm rounded-circle" src="${path}/static/web/images/xs/avatar1.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">Michelle Green</h6>
-                                            <p class="small text-muted text-nowrap ms-4 mb-0">1DY</p>
-                                        </div>
-                                        <div>
-                                            joined the Slack group HS Team
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar sm me-2">
-                                        <img class="avatar sm rounded-circle" src="${path}/static/web/images/xs/avatar2.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">Elizabeth Martin</h6>
-                                            <p class="small text-muted text-nowrap ms-4 mb-0">4DY</p>
-                                        </div>
-                                        <div class="text-truncate"><i class="zmdi zmdi-file-text me-1"></i> It is a long established fact that a reader w...</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar sm me-2">
-                                        <div class="avatar sm rounded-circle no-image orange">
-                                            <span><i class="zmdi zmdi-check"></i></span>
-                                        </div>
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto text-warning">Issue Fixed</h6>
-                                            <p class="small text-muted text-nowrap ms-4 mb-0">5DY</p>
-                                        </div>
-                                        <div>
-                                            WE have fix all Design bug with Responsive
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar sm me-2">
-                                        <div class="avatar sm rounded-circle no-image red">
-                                            <span><i class="zmdi zmdi-help zmdi-hc-lg"></i></span>
-                                        </div>
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto text-danger">Server Warning </h6>
-                                            <p class="small text-muted text-nowrap ms-4 mb-0">5DY</p>
-                                        </div>
-                                        <div>
-                                            Your connection is not private
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="tab-pane fade" id="nav-tab-components" role="tabpanel">
-
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="mb-0 text-primary">Components</h4>
-                </div>
-
-                <div class="card mb-1">
-                    <div class="card-body">
-                        <ul class="menu-list p-0 m-0">
-                            <li class="header">COMPONENTS</li>
-                            <li><a class="py-2" href="ui-alerts.html"><i class="zmdi zmdi-alert-circle-o me-3"></i><span>Alerts</span></a></li>
-                            <li><a class="py-2" href="ui-badges.html"><i class="zmdi zmdi-label me-3"></i><span>Badges</span></a></li>
-                            <li><a class="py-2" href="ui-breadcrumb.html"><i class="zmdi zmdi-label me-3"></i><span>Breadcrumb</span></a></li>
-                            <li><a class="py-2" href="ui-buttons.html"><i class="zmdi zmdi-label me-3"></i><span>Buttons</span></a></li>
-                            <li><a class="py-2" href="ui-card.html"><i class="zmdi zmdi-label me-3"></i><span>Card's</span></a></li>
-                            <li><a class="py-2" href="ui-collapse.html"><i class="zmdi zmdi-label me-3"></i><span>Collapse</span></a></li>
-                            <li><a class="py-2" href="ui-colors.html"><i class="zmdi zmdi-format-color-fill me-3"></i><span>Colors</span></a></li>
-                            <li><a class="py-2" href="ui-dialogs.html"><i class="zmdi zmdi-label me-3"></i><span>Dialogs</span></a></li>
-                            <li><a class="py-2" href="ui-icons.html"><i class="zmdi zmdi-bookmark me-3"></i><span>Icons</span></a></li>
-                            <li><a class="py-2" href="ui-listgroup.html"><i class="zmdi zmdi-format-list-bulleted me-3"></i><span>List Group</span></a></li>
-                            <li><a class="py-2" href="ui-mediaobject.html"><i class="zmdi zmdi-label me-3"></i><span>Media Object</span></a></li>
-                            <li><a class="py-2" href="ui-modals.html"><i class="zmdi zmdi-label me-3"></i><span>Modals</span></a></li>
-                            <li><a class="py-2" href="ui-notifications.html"><i class="zmdi zmdi-notifications me-3"></i><span>Notifications</span></a></li>
-                            <li><a class="py-2" href="ui-progressbars.html"><i class="zmdi zmdi-circle-o me-3"></i><span>Progress Bars</span></a></li>
-                            <li><a class="py-2" href="ui-pagination.html"><i class="zmdi zmdi-format-list-numbered me-3"></i><span>Pagination</span></a></li>
-                            <li><a class="py-2" href="ui-scrollspy.html"><i class="zmdi zmdi-label me-3"></i><span>Scrollspy</span></a></li>
-                            <li><a class="py-2" href="ui-spinners.html"><i class="zmdi zmdi-spinner me-3"></i><span>Spinners</span></a></li>
-                            <li><a class="py-2" href="ui-tabs.html"><i class="zmdi zmdi-tab me-3"></i><span>Tabs</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="rightbar d-none d-md-block">
-
-        <div class="nav flex-column nav-pills border-start py-xl-4 py-3 h-100">
-            <a class="nav-link mb-2 text-center rightbar-link" data-bs-toggle="pill" href="#tab-calendar"><i class="zmdi zmdi-calendar"></i></a>
-            <a class="nav-link mb-2 text-center rightbar-link" data-bs-toggle="pill" href="#tab-note"><i class="zmdi zmdi-lamp"></i></a>
-            <a class="nav-link mb-2 text-center rightbar-link" data-bs-toggle="pill" href="#tab-task"><i class="zmdi zmdi-comment-edit"></i></a>
-            <a class="nav-link mb-2 text-center rightbar-link" data-bs-toggle="pill" href="#tab-github"><i class="zmdi zmdi-github"></i></a>
-            <a class="nav-link mb-2 text-center" href="#"><i class="zmdi zmdi-plus"></i></a>
-        </div>
-        <div class="tab-content py-xl-4 py-3 px-xl-4 px-3">
-
-            <div class="tab-pane fade" id="tab-calendar" role="tabpanel">
-                <div class="header border-bottom pb-4 d-flex justify-content-between">
-                    <div>
-                        <h6 class="mb-0 fw-bold">Calendar</h6>
-                        <span class="text-muted">Update your profile details</span>
-                    </div>
-                    <div>
-                        <button class="btn btn-link close-sidebar text-muted" type="button"><i class="zmdi zmdi-close"></i></button>
-                    </div>
-                </div>
-                <div class="body mt-4">
-                    <div id="mini-calendar"></div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="tab-note" role="tabpanel">
-                <div class="header border-bottom pb-4 d-flex justify-content-between">
-                    <div>
-                        <h6 class="mb-0 fw-bold">My Notes</h6>
-                        <span class="text-muted">Update your profile details</span>
-                    </div>
-                    <div>
-                        <button class="btn btn-link close-sidebar text-muted" type="button"><i class="zmdi zmdi-close"></i></button>
-                    </div>
-                </div>
-                <div class="body mt-4">
-                    <div class="add-note">
-                        <form>
-                            <div class="input-group mb-2">
-                                <textarea rows="3" class="form-control" placeholder="Enter a note here.."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary addnote">Add</button>
-                        </form>
-                        <ul class="list-unstyled mt-4">
-                            <li class="card border-0 mb-2">
-                                <span>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</span>
-                                <button class="btn btn-sm btn-link"><i class="zmdi zmdi-delete text-danger"></i></button>
-                            </li>
-                            <li class="card border-0 mb-2">
-                                <span>Contrary to popular belief, Lorem Ipsum is not simply random text.</span>
-                                <button class="btn btn-sm btn-link"><i class="zmdi zmdi-delete text-danger"></i></button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="tab-task" role="tabpanel">
-                <div class="header border-bottom pb-4 d-flex justify-content-between">
-                    <div>
-                        <h6 class="mb-0 fw-bold">My Task List</h6>
-                        <span class="text-muted">Update your profile details</span>
-                    </div>
-                    <div>
-                        <button class="btn btn-link close-sidebar text-muted" type="button"><i class="zmdi zmdi-close"></i></button>
-                    </div>
-                </div>
-                <div class="body mt-4">
-                    <div class="todo-list">
-                        <ul class="list-unstyled todo-list-items">
-                            <li>
-                                <label class="c_checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    <span class="ms-2">Update new code on github</span>
-                                </label>
-                                <button class="btn btn-sm btn-link" type="submit"><i class="zmdi zmdi-delete"></i></button>
-                            </li>
-                            <li>
-                                <label class="c_checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    <span class="ms-2">Meeting with design team and updates</span>
-                                </label>
-                                <button class="btn btn-sm btn-link" type="submit"><i class="zmdi zmdi-delete"></i></button>
-                            </li>
-                            <li>
-                                <label class="c_checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    <span class="ms-2">Send project zip file to developer</span>
-                                </label>
-                                <button class="btn btn-sm btn-link" type="submit"><i class="zmdi zmdi-delete"></i></button>
-                            </li>
-                            <li>
-                                <label class="c_checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    <span class="ms-2">Create new design psd for onepage</span>
-                                </label>
-                                <button class="btn btn-sm btn-link" type="submit"><i class="zmdi zmdi-delete"></i></button>
-                            </li>
-                        </ul>
-                        <form class="add-items">
-                            <div class="input-group mb-2">
-                                <textarea rows="3" class="form-control" placeholder="What do you need to do today?"></textarea>
-                            </div>
-                            <button class="add btn btn-primary" type="submit">Add to List</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="tab-github" role="tabpanel">
-                <div class="header border-bottom pb-4 d-flex justify-content-between">
-                    <div>
-                        <h6 class="mb-0 fw-bold">My Github Activity</h6>
-                        <span class="text-muted">puffintheme</span>
-                    </div>
-                    <div>
-                        <button class="btn btn-link close-sidebar text-muted" type="button"><i class="zmdi zmdi-close"></i></button>
-                    </div>
-                </div>
-                <div class="body mt-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <div class="d-flex align-items-center">
-                                        <img src="${path}/static/web/images/xs/avatar6.jpg" data-bs-toggle="tooltip" title="" alt="Avatar" class="rounded-circle avatar" data-original-title="Avatar Name">
-                                        <div class="ms-3">
-                                            <a href="#" title="">Michelle Green</a>
-                                            <p class="mb-0"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c7aaaea4afa2ababa2e9a0b5a2a2a987a2bfa6aab7aba2e9a4a8aa">[email&#160;protected]</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-auto">
-                                    <div class="dropdown">
-                                        <a href="#" class="btn btn-link btn-sm dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" data-expanded="false">
-                                            <i class="zmdi zmdi-more-vert zmdi-hc-lg"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="#!" class="dropdown-item">Action</a>
-                                            <a href="#!" class="dropdown-item">Another action</a>
-                                            <a href="#!" class="dropdown-item">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group mt-3 mb-3">
-                                <textarea rows="3" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
-                            </div>
-                            <div class="align-right">
-                                <button class="btn btn-primary">Push</button>
-                                <button class="btn btn-link"><i class="zmdi zmdi-attachment text-muted"></i></button>
-                                <button class="btn btn-link"><i class="zmdi zmdi-camera text-muted"></i></button>
-                                <button class="btn btn-link"><i class="zmdi zmdi-mood text-muted"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <ol class="activity-feed p-0 ms-3 mb-0 pt-5">
-                        <li class="feed-item d-flex mb-3 pl-lg-4 ps-3" data-content="" data-time="5 hours ago" data-color="yellow">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <input type="checkbox" id="expand_1" name="expand_1">
-                                    <label for="expand_1" class="mb-0">
-                                        <b>Request</b> code merge in git
-                                    </label>
-                                    <div class="feed-content">
-                                        <p><b>comments</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="feed-item d-flex mb-3 pl-lg-4 ps-3" data-content="" data-time="7 hours ago" data-color="green">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <input type="checkbox" id="expand_2" name="expand_2">
-                                    <label for="expand_2" class="mb-0">
-                                        <b>Update</b> React app login page code
-                                    </label>
-                                    <div class="feed-content">
-                                        <p><b>comments</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="feed-item d-flex mb-3 pl-lg-4 ps-3" data-content="" data-time="December 2020" data-color="green">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <input type="checkbox" id="expand_3" name="expand_3">
-                                    <label for="expand_3" class="mb-0">
-                                        2 contributions in private repositories
-                                    </label>
-                                    <div class="feed-content">
-                                        <span><a href="#">puffintheme/Allima-v0.1</a> 12 commits</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="feed-item d-flex mb-3 pl-lg-4 ps-3" data-content="" data-time="December 2020" data-color="dark">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <input type="checkbox" id="expand_4" name="expand_4">
-                                    <label for="expand_4" class="mb-0">
-                                        <b>PostMan</b> Create a new project
-                                    </label>
-                                    <div class="feed-content">
-                                        <h2>BOOM!</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ol>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -699,14 +179,16 @@
                         <div class="col-12">
                             <ul class="nav nav-tabs nav-overflow page-header-tabs mb-4 mt-md-5 mt-3">
                                 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#setting-general" role="tab">通用</a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting-billing" role="tab">支付方式</a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting-members" role="tab">会员</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting-billing" role="tab">修改头像</a></li>
                                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting-security" role="tab">隐私与安全</a></li>
                                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting-faqs" role="tab">问题</a></li>
                             </ul>
                         </div>
                     </div>
 
+<%--------------------------------------------------------------------------------------------------------------------%>
+<%--------------------------------------------------------------------------------------------------------------------%>
+<%--------------------------------------------------通用设置栏----------------------------------------------------------%>
                     <div class="tab-content">
 
                         <div class="tab-pane fade show active" id="setting-general" role="tabpanel">
@@ -719,65 +201,35 @@
                                         </div>
                                         <div class="card-body">
 
-                                            <form class="row g-3">
+                                            <form class="row g-3" action="${path}/userCenter/updateInfo" method="post">
                                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control form-control-lg" placeholder="请输入你的名字">
+                                                            <input type="text" name="id" value="${user.id}" hidden>
+                                                            <input type="text" name="name" id="name" class="form-control form-control-lg" placeholder="请输入你的名字" value="${user.name}">
+                                                            <span id="nameMsg"></span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control form-control-lg" placeholder="请输入电话">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6 col-sm-12">
-                                                    <div class="form-group">
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control form-control-lg" placeholder="请输入邮箱">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6 col-sm-12">
-                                                    <div class="form-group">
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control form-control-lg" placeholder="脸书账号链接网址">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6 col-sm-12">
-                                                    <div class="form-group">
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control form-control-lg" placeholder="Instagram账号链接网址">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6 col-sm-12">
-                                                    <div class="form-group">
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control form-control-lg" placeholder="脸书账号链接网址">
+                                                            <input type="text" name="email" id="email" class="form-control form-control-lg" placeholder="请输入邮箱" value="${user.email}">
+                                                            <span id="emailMsg"></span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label>选择头像</label>
-                                                        <input type="file" class="form-control-file">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="form-group">
                                                         <div class="input-group">
-                                                            <textarea rows="4" class="form-control" placeholder="请输入个人简介"></textarea>
+                                                            <textarea rows="4" name="signature" id="signature" class="form-control" placeholder="请输入个人简介">${user.signature}</textarea>
+                                                            <span id="signatureMsg"></span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button type="button" class="btn btn-primary">更新细节</button>
-                                                    <button type="button" class="btn btn-link">取消</button>
+                                                    <button type="submit" class="btn btn-primary" id="updateBtn" onclick="notifyUpdate()">更新信息</button>
+                                                    <button type="button" class="btn btn-link" onclick="refreshPage()">取消</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -790,406 +242,55 @@
                                     <p class="text-muted mb-md-0">请注意，点击删除账号将会永久删除账号并且一旦删除账号将无法撤回。</p>
                                 </div>
                                 <div class="col-auto">
-                                    <button class="btn btn-danger">删除</button>
+                                    <form action="${path}/userCenter/deleteUser" method="post" id="deleteUser">
+                                        <input type="button" class="btn btn-danger" value="删除" onclick="verifyDelete()">
+                                    </form>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="setting-billing" role="tabpanel">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="alert alert-danger">
-                                        <i class="zmdi zmdi-info me-1"></i> 你即将达到API上限.
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
 
-                                    <div class="card mb-4">
-                                        <div class="card-body">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <h6 class="text-uppercase text-muted mb-1 small">Current plan</h6>
-                                                    <span class="h3 mb-0">$39/mo</span>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <a class="btn btn-sm btn-dark" href="pricing.html">Upgrade</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
 
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            <div class="row align-items-center">
-                                                <div class="col">
 
-                                                    <h6 class="card-title mb-0">Payment methods</h6>
-                                                </div>
-                                                <div class="col-auto">
-
-                                                    <a class="btn btn-sm btn-primary" href="#!">Add method</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-
-                                            <div class="list-group custom list-group-flush my-2">
-                                                <div class="list-group-item">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="img-fluid" src="${path}/static/web/images/visa.svg" alt="..." style="max-width: 38px;">
-                                                        </div>
-                                                        <div class="col ml-n2">
-                                                            <h6 class="mb-0">Visa ending in 2222</h6>
-                                                            <small class="text-muted">Expires 05/2023</small>
-                                                        </div>
-                                                        <div class="col-auto mr-n3">
-                                                            <span class="badge bg-light">Default</span>
-                                                        </div>
-
-                                                        <div class="col-auto">
-                                                            <div class="dropdown">
-                                                                <a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    <i class="zmdi zmdi-more"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <a class="dropdown-item" href="#!">Action</a>
-                                                                    <a class="dropdown-item" href="#!">Another action</a>
-                                                                    <a class="dropdown-item" href="#!">Something else here</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="list-group-item">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="img-fluid" src="${path}/static/web/images/mastercard.svg" alt="..." style="max-width: 38px;">
-                                                        </div>
-                                                        <div class="col ml-n2">
-                                                            <h6 class="mb-0">Mastercard ending in 9999</h6>
-                                                            <small class="text-muted">Expires 10/2026</small>
-                                                        </div>
-
-                                                        <div class="col-auto">
-                                                            <div class="dropdown">
-                                                                <a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    <i class="zmdi zmdi-more"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <a class="dropdown-item" href="#!">Action</a>
-                                                                    <a class="dropdown-item" href="#!">Another action</a>
-                                                                    <a class="dropdown-item" href="#!">Something else here</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h6 class="card-title mb-0">Invoices</h6>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table class="table table-border table-hover table-nowrap card-table mb-0">
-                                                <thead>
-                                                <tr>
-                                                    <th>Invoice ID</th>
-                                                    <th>Date</th>
-                                                    <th>Amount</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody class="font-size-base">
-                                                <tr>
-                                                    <td>
-                                                        <a href="invoices.html">Invoice #10022</a>
-                                                    </td>
-                                                    <td>
-                                                        <time datetime="2020-04-24">Oct. 24, 2020</time>
-                                                    </td>
-                                                    <td>
-                                                        $29.00
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge bg-secondary">Outstanding</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="invoices.html">Invoice #10012</a>
-                                                    </td>
-                                                    <td>
-                                                        <time datetime="2020-03-24">Aug. 11, 2020</time>
-                                                    </td>
-                                                    <td>
-                                                        $29.00
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge bg-success">Paid</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="invoices.html">Invoice #10043</a>
-                                                    </td>
-                                                    <td>
-                                                        <time datetime="2020-02-24">July. 5, 2020</time>
-                                                    </td>
-                                                    <td>
-                                                        $29.00
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge bg-success">Paid</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="invoices.html">Invoice #10045</a>
-                                                    </td>
-                                                    <td>
-                                                        <time datetime="2020-01-24">Jun. 16, 2020</time>
-                                                    </td>
-                                                    <td>
-                                                        $29.00
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge bg-success">Paid</span>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mt-4">
-                                <small class="text-muted">Don’t need Dashkit anymore? <a href="#!">Cancel your account</a></small>
-                            </p>
-                        </div>
-
-                        <div class="tab-pane fade" id="setting-members" role="tabpanel">
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-
-                                    <div class="card mb-4">
-                                        <div class="card-body">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <p class="text-uppercase text-muted small mb-1">Seats used</p>
-                                                    <span class="h4 mb-0">4 out of 6</span>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <a class="btn btn-sm btn-outline-primary" href="#!">Upgrade</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-
-                                    <div class="card mb-4">
-                                        <div class="card-body">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <p class="text-uppercase text-muted small mb-1">Default role</p>
-                                                    <span class="h4 mb-0">Staff</span>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <a class="btn btn-sm btn-dark" href="#!">Change</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between">
-                                            <h6 class="card-title">Members</h6>
-
-                                            <div class="dropdown">
-                                                <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="dropdown">
-                                                    Invite member
-                                                </button>
-                                                <form class="dropdown-menu dropdown-menu-right" style="width: 300px;">
-                                                    <div class="card-header">
-                                                        <h6 class="card-title mb-0">Invite a member</h6>
-                                                        <span class="badge bg-primary">2 seats left</span>
-                                                    </div>
-                                                    <div class="card-header">
-                                                        <div class="row no-gutters align-items-center">
-                                                            <div class="col-3">
-                                                                <label class="mb-0">Name</label>
-                                                            </div>
-                                                            <div class="col">
-                                                                <input class="form-control form-control-flush" type="text" placeholder="Full name">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-header">
-                                                        <div class="row no-gutters align-items-center">
-                                                            <div class="col-3">
-                                                                <label class="mb-0">Email</label>
-                                                            </div>
-                                                            <div class="col">
-                                                                <input class="form-control form-control-flush" type="text" placeholder="Email address">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer">
-
-                                                        <button class="btn btn-block btn-primary" type="submit">
-                                                            Invite member
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-
-                                            <div class="list-group custom list-group-flush my-md-3">
-                                                <div class="list-group-item">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-auto">
-                                                            <a href="#" class="avatar"><img src="${path}/static/web/images/xs/avatar1.jpg" alt="..." class="avatar rounded-circle"></a>
-                                                        </div>
-                                                        <div class="col-5 ms-2">
-                                                            <h6 class="mb-1"><a href="#">Dianna Smiley</a></h6>
-                                                            <p class="small text-muted mb-0">
-                                                                <a class="d-block text-reset text-truncate" href="mailt:amelia.green@company.com"><span class="__cf_email__" data-cfemail="fa9b979f96939bd49d889f9f94ba9995978a9b9483d4999597">[email&#160;protected]</span></a>
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-auto ms-auto mr-md-3">
-                                                            <select class="form-control custom-select" data-bs-toggle="select">
-                                                                <option value="1">Admin</option>
-                                                                <option value="2">Staff</option>
-                                                                <option value="3">Custom</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <div class="dropdown">
-                                                                <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    <i class="zmdi zmdi-more"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <a class="dropdown-item" href="#!">Action</a>
-                                                                    <a class="dropdown-item" href="#!">Another action</a>
-                                                                    <a class="dropdown-item" href="#!">Something else here</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="list-group-item">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-auto">
-                                                            <a href="#" class="avatar"><img src="${path}/static/web/images/xs/avatar2.jpg" alt="..." class="avatar rounded-circle"></a>
-                                                        </div>
-                                                        <div class="col-5 ms-2">
-                                                            <h6 class="mb-1"><a href="#">Dianna Smiley</a></h6>
-                                                            <p class="small text-muted mb-0">
-                                                                <a class="d-block text-reset text-truncate" href="mailt:charlotte.green@company.com"><span class="__cf_email__" data-cfemail="f3909b92819f9c878796dd948196969db3909c9e83929d8add909c9e">[email&#160;protected]</span></a>
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-auto ms-auto mr-md-3">
-                                                            <select class="form-control custom-select" data-bs-toggle="select">
-                                                                <option value="1">Admin</option>
-                                                                <option value="2">Staff</option>
-                                                                <option value="3">Custom</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <div class="dropdown">
-                                                                <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    <i class="zmdi zmdi-more"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <a class="dropdown-item" href="#!">Action</a>
-                                                                    <a class="dropdown-item" href="#!">Another action</a>
-                                                                    <a class="dropdown-item" href="#!">Something else here</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="list-group-item">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-auto">
-                                                            <a href="#" class="avatar"><img src="${path}/static/web/images/xs/avatar3.jpg" alt="..." class="avatar rounded-circle"></a>
-                                                        </div>
-                                                        <div class="col-5 ms-2">
-                                                            <h6 class="mb-1"><a href="#">Dianna Smiley</a></h6>
-                                                            <p class="small text-muted mb-0">
-                                                                <a class="d-block text-reset text-truncate" href="mailt:susie.willis@company.com"><span class="__cf_email__" data-cfemail="d3a0a6a0bab6fda4babfbfbaa093b0bcbea3b2bdaafdb0bcbe">[email&#160;protected]</span></a>
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-auto ms-auto mr-md-3">
-                                                            <select class="form-control custom-select" data-bs-toggle="select">
-                                                                <option value="1">Admin</option>
-                                                                <option value="2">Staff</option>
-                                                                <option value="3">Custom</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <div class="dropdown">
-                                                                <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    <i class="zmdi zmdi-more"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <a class="dropdown-item" href="#!">Action</a>
-                                                                    <a class="dropdown-item" href="#!">Another action</a>
-                                                                    <a class="dropdown-item" href="#!">Something else here</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<%--------------------------------------------------------------------------------------------------------------------%>
+<%--------------------------------------------------------------------------------------------------------------------%>
+<%-------------------------------------------------隐私与安全部分--------------------------------------------------------%>
 
                         <div class="tab-pane fade" id="setting-security" role="tabpanel">
                             <div class="row justify-content-between mb-4">
                                 <div class="col-12 col-md-6">
                                     <h5>修改密码</h5>
-                                    <p class="text-muted mb-md-0">当您提交密码更改请求后，我们将向您发送一封确认电子邮件，请在提交后留意您的电子邮件。</p>
                                 </div>
                                 <div class="col-auto">
                                     <button class="btn btn-warning">忘记密码了？</button>
                                 </div>
                             </div>
+
+<%-------------------------------------------------修改密码--------------------------------------------------------%>
                             <div class="row g-3">
                                 <div class="col-12">
 
                                     <div class="card mb-4">
                                         <div class="card-body">
-                                            <form class="row">
+                                            <form class="row" action="${path}/userCenter/updatePassword" method="post">
                                                 <div class="col-lg-4 col-md-12">
                                                     <div class="form-group mb-3">
                                                         <label>旧密码</label>
-                                                        <input type="email" class="form-control">
+                                                        <input type="password" id="oldPassword" class="form-control">
+                                                        <span id="oldPasswordMsg"></span>
                                                     </div>
                                                     <div class="form-group mb-3">
                                                         <label>新密码</label>
-                                                        <input type="email" class="form-control">
+                                                        <input type="password" id="password" name="password" class="form-control">
+                                                        <span id="passwordMsg"></span>
                                                     </div>
                                                     <div class="form-group mb-3">
                                                         <label>请再输入密码</label>
-                                                        <input type="email" class="form-control">
+                                                        <input type="password" class="form-control" id="confirmPassword">
+                                                        <span id="confirmPasswordMsg"></span>
                                                     </div>
-                                                    <button type="button" class="btn btn-primary">更新密码</button>
-                                                    <button type="button" class="btn btn-link">取消</button>
+                                                    <button type="submit" class="btn btn-primary" id="passwordBtn">更新密码</button>
+                                                    <button type="button" class="btn btn-link" onclick="refreshPage()">取消</button>
                                                 </div>
                                                 <div class="col-lg-8 col-md-12">
 
@@ -1211,6 +312,74 @@
                                     </div>
                                 </div>
                             </div>
+
+
+<%--------------------------------------------------修改手机号-------------------------------------------------------%>
+
+                            <div class="row justify-content-between mb-4">
+                                <div class="col-12 col-md-6">
+                                    <h5>修改手机号</h5>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-warning">忘记密码了？</button>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-12">
+
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <form class="row" action="${path}/userCenter/updatePhone" method="post" id="updatePhoneForm">
+                                                <div class="col-lg-4 col-md-12">
+                                                    <div class="form-group mb-3">
+                                                        <label>请输入您的密码</label>
+                                                        <input type="text" class="form-control" id="passwordPhone">
+                                                        <span id="phonePasswordMsg"></span>
+                                                    </div>
+                                                    <div class="form-group mb-3">
+                                                        <label>请输入您之前的手机号</label>
+                                                        <input type="text" class="form-control" id="oldPhone">
+                                                        <span id="oldPhoneMsg"></span>
+                                                    </div>
+                                                    <div class="form-group mb-3">
+                                                        <label>请输入您新的手机号</label>
+                                                        <input type="text" name="phone" id="phone" class="form-control">
+                                                        <span id="phoneMsg"></span>
+                                                        <input type="button" id="getCodeBtn" class="form-control form-control-lg" value="点击获取验证码">
+                                                    </div>
+                                                    <div class="form-group mb-3">
+                                                        <label>请输入验证码</label>
+                                                        <input type="text" name="verifyCode" id="verifyCode" class="form-control">
+                                                        <span id="verifyCodeMsg"></span>
+                                                    </div>
+                                                    <button type="button" class="btn btn-primary" id="phoneBtn">更新手机号</button>
+                                                    <button type="button" class="btn btn-link" onclick="refreshPage()">取消</button>
+                                                </div>
+                                                <div class="col-lg-8 col-md-12">
+
+                                                    <div class="card bg-light border">
+                                                        <div class="card-body">
+                                                            <p class="mb-2">手机号更换说明</p>
+                                                            <p class="small text-muted mb-2">要更换手机号，您必须满足以下所有要求：</p>
+
+                                                            <ul class="small text-muted ps-4 mb-0">
+                                                                <li>您必须输入您之前的密码</li>
+                                                                <li>您必须输入您之前的手机号</li>
+                                                                <li>您输入您现在的手机号之后，必须通过手机验证码验证才能进行更改</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
                             <div class="row justify-content-between mt-4 mb-4">
                                 <div class="col-12 col-md-6">
                                     <h5>登录设备历史</h5>
@@ -1288,7 +457,9 @@
                                 </div>
                             </div>
                         </div>
-
+<%--------------------------------------------------------------------------------------------------------------------%>
+<%--------------------------------------------------------------------------------------------------------------------%>
+<%----------------------------------------------------问题部分----------------------------------------------------------%>
                         <div class="tab-pane fade" id="setting-faqs" role="tabpanel">
                             <div class="row">
                                 <div class="col-lg-3 col-md-12">
@@ -1434,3 +605,295 @@
 <script src="${path}/static/web/js/template.js" type="19cf48fd2337d09ff06d0d5e-text/javascript"></script>
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="19cf48fd2337d09ff06d0d5e-|49" defer=""></script></body>
 </html>
+
+<%--修改用户个人资料的表单验证--%>
+<script type="text/javascript">
+
+    var nameFlag = false, emailFlag = false, signatureFlag = false;
+
+    function checkName() {
+        var name = $("#name").val();
+        var nameExp = /^[\u4e00-\u9fa5a-zA-Z0-9]{1,15}$/;
+        if (!nameExp.test(name)) {
+            $("#nameMsg").html("*");
+            $("#nameMsg").css("color", "red");
+            nameFlag = false;
+        } else {
+            $("#nameMsg").html("√");
+            $("#nameMsg").css("color", "green");
+            nameFlag = true;
+        }
+    }
+
+
+    function checkEmail() {
+        var email = $("#email").val();
+        var emailExp = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+$/;
+        if (!emailExp.test(email)) {
+            $("#emailMsg").html("*");
+            $("#emailMsg").css("color", "red");
+            emailFlag = false;
+        } else {
+            $("#emailMsg").html("√");
+            $("#emailMsg").css("color", "green");
+            emailFlag = true;
+        }
+    }
+
+    function checkSignature() {
+        var signature = $("#signature").val();
+        var signatureExp = /^.{0,200}$/;
+        if (!signatureExp.test(signature)) {
+            $("#signatureMsg").html("您的个性签名不符合规定，请输入200位以内的字符");
+            $("#signatureMsg").css("color", "red");
+            signatureFlag = false;
+        } else {
+            $("#signatureMsg").html("√");
+            $("#signatureMsg").css("color", "green");
+            signatureFlag = true;
+        }
+    }
+
+    function refreshPage()
+    {
+        location.reload();
+    }
+
+    function notifyUpdate()
+    {
+        alert("更新成功！");
+    }
+
+    $(function () {
+        $("#name").blur(checkName);
+        $("#email").blur(checkEmail);
+        $("#signature").blur(checkSignature);
+
+        $("#updateBtn").click(function () {
+            checkName();
+            checkEmail();
+            checkSignature();
+            if (!nameFlag || !phoneFlag || !signatureFlag) {
+                //阻止表单提交
+                return false;
+            }
+        });
+
+    });
+
+    function verifyDelete()
+    {
+        var confirmation = confirm("确定要删除您的账号吗？一旦删除不可撤销");
+        console.log(confirmation);
+        if(confirmation)
+        {
+            console.log(111);
+            $("#deleteUser").submit();
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+</script>
+
+<%--修改密码的表单验证--%>
+<script type="text/javascript">
+
+    var oldPasswordFlag = false, newPasswordFlag = false, confirmPasswordFlag = false;
+    function checkOldPassword(){
+        var oldPassword = $("#oldPassword").val();
+
+        $.ajax({
+            url: "${path}/userCenter/verifyPassword",
+            type: "GET",
+            data: {
+                oldPassword: oldPassword
+            },
+            async: false, // 设置为同步请求
+            success: function(data)
+            {
+                console.log(data);
+                if (data == "fail") {
+                    $("#oldPasswordMsg").html("密码错误");
+                    $("#oldPasswordMsg").css("color", "red");
+                    oldPasswordFlag = false;
+                } else {
+                    $("#oldPasswordMsg").html("√");
+                    $("#oldPasswordMsg").css("color", "green");
+                    oldPasswordFlag = true;
+                }
+            }
+        });
+    }
+
+    function checkNewPassword(){
+        var password = $("#password").val();
+        var passwordExp = /^.{5,20}$/;
+        if (!passwordExp.test(password)) {
+            $("#passwordMsg").html("*");
+            $("#passwordMsg").css("color", "red");
+            newPasswordFlag = false;
+        } else {
+            $("#passwordMsg").html("√");
+            $("#passwordMsg").css("color", "green");
+            newPasswordFlag = true;
+        }
+    }
+
+    function checkConfirmPassword(){
+        var password = $("#password").val();
+        var confirmPassword = $("#confirmPassword").val();
+        if (password != confirmPassword) {
+            $("#confirmPasswordMsg").html("*");
+            $("#confirmPasswordMsg").css("color", "red");
+            confirmPasswordFlag = false;
+        } else {
+            $("#confirmPasswordMsg").html("√");
+            $("#confirmPasswordMsg").css("color", "green");
+            confirmPasswordFlag = true;
+        }
+    }
+
+    $("#passwordBtn").click(function () {
+        checkOldPassword();
+        checkNewPassword();
+        checkConfirmPassword();
+        if (!newPasswordFlag || !confirmPasswordFlag || !oldPasswordFlag) {
+            //阻止表单提交
+            return false;
+        }
+        alert("密码修改成功！");
+    });
+
+</script>
+
+<%--修改手机号码的表单验证+发送验证码--%>
+<script type="text/javascript">
+
+    var phonePasswordFlag = false, oldPhoneFlag = false, newPhoneFlag = false, verifyCodeFlag = false;
+    function checkPhonePassword(){
+        var phonePassword = $("#passwordPhone").val();
+        $.ajax({
+            url: "${path}/userCenter/verifyPassword",
+            type: "GET",
+            data: {
+                oldPassword: phonePassword
+            },
+            async: false, // 设置为同步请求
+            success: function(data)
+            {
+                console.log(data);
+                if (data == "fail") {
+                    $("#phonePasswordMsg").html("密码错误");
+                    $("#phonePasswordMsg").css("color", "red");
+                    phonePasswordFlag = false;
+                } else {
+                    $("#phonePasswordMsg").html("√");
+                    $("#phonePasswordMsg").css("color", "green");
+                    phonePasswordFlag = true;
+                }
+            }
+        });
+    }
+
+    function checkOldPhone(){
+        var oldPhone = $("#oldPhone").val();
+        var oldPhoneValue = "${user.phone}";
+        if (oldPhone != oldPhoneValue) {
+            $("#oldPhoneMsg").html("*");
+            $("#oldPhoneMsg").css("color", "red");
+            oldPhoneFlag = false;
+        } else {
+            $("#oldPhoneMsg").html("√");
+            $("#oldPhoneMsg").css("color", "green");
+            oldPhoneFlag = true;
+        }
+    }
+
+
+    function checkNewPhone() {
+        var phone = $("#phone").val();
+        var phoneExp = /^1[3-9]\d{9}$/;
+        if (!phoneExp.test(phone)) {
+            $("#phoneMsg").html("*");
+            $("#phoneMsg").css("color", "red");
+            newPhoneFlag = false;
+        } else {
+            $("#phoneMsg").html("√");
+            $("#phoneMsg").css("color", "green");
+            newPhoneFlag = true;
+        }
+    }
+
+    $("#phoneBtn").click(function () {
+        checkPhonePassword();
+        checkOldPhone();
+        checkNewPhone();
+        if (!phonePasswordFlag || !oldPhoneFlag || !newPhoneFlag) {
+            //阻止表单提交
+            return;
+        }
+
+        var code = $("#verifyCode").val();
+        $.get("${path}/web/verifyCode?code="+code,function (data){
+            console.log(data);
+            if (data == "fail")
+            {
+                $("#verifyCodeMsg").html("验证码错误");
+                $("#verifyCodeMsg").css("color", "red");
+                return;
+            }
+            else
+            {
+                $("#verifyCodeMsg").html("√");
+                $("#verifyCodeMsg").css("color", "green");
+                verifyCodeFlag = true;
+                alert("手机号更新成功！");
+                $("#updatePhoneForm").submit();
+            }
+        });
+
+    });
+
+    //点击获取验证码
+    $("#getCodeBtn").click(function (){
+        var phoneNum = $("#phone").val();
+        console.log(phoneNum);
+        $.get("${path}/web/sendCode?phone="+phoneNum,function (data){
+            console.log(data);
+            if (data == "fail")
+            {
+                alert("发送验证码失败，请重试");
+            }
+            else
+            {
+                alert("验证码发送成功！");
+            }
+        });
+
+        var button = document.getElementById('getCodeBtn');
+        button.disabled = true; // 设置按钮为不可点击状态
+
+        var secondsLeft = 59;
+        updateTime();
+
+        var countdownInterval = setInterval(updateTime, 1000); // 每秒更新倒计时
+
+        setTimeout(function() {
+            button.disabled = false; // 60秒后将按钮设置为可点击状态
+            clearInterval(countdownInterval); // 清除倒计时定时器
+            button.value = '点击获取验证码'; // 清空倒计时显示
+        }, secondsLeft * 1000);
+
+        function updateTime() {
+            var minutes = Math.floor(secondsLeft / 60);
+            var seconds = secondsLeft % 60;
+
+            button.value = "点击获取验证码（"+seconds + '秒）';
+            secondsLeft--;
+        }
+
+    });
+</script>

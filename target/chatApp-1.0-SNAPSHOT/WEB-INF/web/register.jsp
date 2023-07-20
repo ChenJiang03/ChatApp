@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 <title>:: PostMan :: Chat Application</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="${path}/static/web/css/slidercaptcha.css" type="text/css"/>
 <link rel="stylesheet" href="${path}/static/web/fonts/material-icon/css/material-design-iconic-font.min.css">
 <link rel="stylesheet" href="${path}/static/web/css/style.min.css">
@@ -29,43 +29,52 @@
                             <form class="mb-4 mt-5" action="${path}/web/register" method="post">
 
                                 <div class="input-group mb-2">
-                                    <input type="text" class="form-control form-control-lg" name="username" id="username" placeholder="请输入用户名（5-20位数字字母下划线）">
+                                    <input type="text" class="form-control form-control-lg" name="username"
+                                           id="username" placeholder="请输入用户名（5-20位数字字母下划线）">
                                     <span id="usernameMsg"></span>
                                 </div>
 
                                 <div class="input-group mb-2">
-                                    <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="请输入密码（5-20位任意字符）">
+                                    <input type="password" class="form-control form-control-lg" name="password"
+                                           id="password" placeholder="请输入密码（5-20位任意字符）">
                                     <span id="passwordMsg"></span>
                                 </div>
 
                                 <div class="input-group mb-2">
-                                    <input type="password" class="form-control form-control-lg" name="confirmPassword" id="confirmPassword" placeholder="请再次输入密码">
+                                    <input type="password" class="form-control form-control-lg" name="confirmPassword"
+                                           id="confirmPassword" placeholder="请再次输入密码">
                                     <span id="confirmPasswordMsg"></span>
                                 </div>
 
                                 <div class="input-group mb-2">
-                                    <input type="text" class="form-control form-control-lg" name="name" id="name" placeholder="请输入昵称（15字以内）">
+                                    <input type="text" class="form-control form-control-lg" name="name" id="name"
+                                           placeholder="请输入昵称（15字以内）">
                                     <span id="nameMsg"></span>
                                 </div>
 
                                 <div class="input-group mb-2">
-                                    <input type="text" class="form-control form-control-lg" name="phone" id="phone" placeholder="请输入手机号">
+                                    <input type="text" class="form-control form-control-lg" name="phone" id="phone"
+                                           placeholder="请输入手机号">
                                     <span id="phoneMsg"></span>
-                                    <input type="button" id="getCodeBtn" class="form-control form-control-lg" value="点击获取验证码">
+                                    <input type="button" id="getCodeBtn" class="form-control form-control-lg"
+                                           value="点击获取验证码">
                                 </div>
 
                                 <div class="input-group mb-2">
-                                    <input type="text" class="form-control form-control-lg" id="verifyCode" placeholder="请输入验证码">
-                                    <span id="verifyCodeMsg" ></span>
+                                    <input type="text" class="form-control form-control-lg" id="verifyCode"
+                                           placeholder="请输入验证码">
+                                    <span id="verifyCodeMsg"></span>
                                 </div>
 
                                 <div>
-                                    <input type="button" class="form-control form-control-lg" id="slideCapthca" value="点击滑动验证码" onclick="setCaptcher()">
+                                    <input type="button" class="form-control form-control-lg" id="slideCapthca"
+                                           value="点击滑动验证码" onclick="setCaptcher()">
                                     <div id="captcha" hidden style="height: 200px"></div>
                                 </div>
 
                                 <div class="text-center mt-5">
-                                    <input type="submit" class="btn btn-lg btn-primary" value="注册" id="btn" onclick="alertVerify()">
+                                    <input type="submit" class="btn btn-lg btn-primary" value="注册" id="btn"
+                                           onclick="alertVerify()">
                                 </div>
                             </form>
 
@@ -75,16 +84,20 @@
                     </div>
                 </div>
                 <div class="signin-img d-none d-lg-block text-center">
-                    <img src="${path}/static/web/images/signin-img-cyan.svg" alt="Sign In Image" />
+                    <img src="${path}/static/web/images/signin-img-cyan.svg" alt="Sign In Image"/>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="${path}/static/web/vendor/jquery/jquery-3.5.1.min.js" type="617e62e51bbeb120c8072e37-text/javascript"></script>
-<script src="${path}/static/web/vendor/bootstrap/js/bootstrap.bundle.min.js" type="617e62e51bbeb120c8072e37-text/javascript"></script>
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="617e62e51bbeb120c8072e37-|49" defer=""></script></body>
+<script src="${path}/static/web/vendor/jquery/jquery-3.5.1.min.js"
+        type="617e62e51bbeb120c8072e37-text/javascript"></script>
+<script src="${path}/static/web/vendor/bootstrap/js/bootstrap.bundle.min.js"
+        type="617e62e51bbeb120c8072e37-text/javascript"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
+        data-cf-settings="617e62e51bbeb120c8072e37-|49" defer=""></script>
+</body>
 </html>
 
 <script type="text/javascript" src="${path}/static/web/vendor/jquery/jquery-3.6.4.min.js"></script>
@@ -193,24 +206,42 @@
             checkConfirmPassword();
             checkName();
             checkPhone();
-            if (!usernameFlag || !passwordFlag || !confirmPasswordFlag || !nameFlag || !phoneFlag) {
+            var code = $("#verifyCode").val();
+            $.ajax({
+                url: "${path}/web/verifyCode",
+                type: "GET",
+                data: {
+                    code: code
+                },
+                async: false, // 设置为同步请求
+                success: function (data) {
+                    console.log(data);
+                    if (data == "fail") {
+                        $("#verifyCodeMsg").html("验证码错误");
+                        $("#verifyCodeMsg").css("color", "red");
+                        verifyCodeFlag = false;
+                    } else {
+                        $("#verifyCodeMsg").html("√");
+                        $("#verifyCodeMsg").css("color", "green");
+                        verifyCodeFlag = true;
+                    }
+                }
+            });
+            if (!usernameFlag || !passwordFlag || !confirmPasswordFlag || !nameFlag || !phoneFlag || !verifyCodeFlag) {
                 //阻止表单提交
                 return false;
             }
         });
 
         //点击获取验证码
-        $("#getCodeBtn").click(function (){
+        $("#getCodeBtn").click(function () {
             var phoneNum = $("#phone").val();
             console.log(phoneNum);
-            $.get("${path}/web/sendCode?phone="+phoneNum,function (data){
+            $.get("${path}/web/sendCode?phone=" + phoneNum, function (data) {
                 console.log(data);
-                if (data == "fail")
-                {
+                if (data == "fail") {
                     alert("发送验证码失败，请重试");
-                }
-                else if (data == "success")
-                {
+                } else if (data == "success") {
                     alert("验证码发送成功！");
                 }
             });
@@ -223,7 +254,7 @@
 
             var countdownInterval = setInterval(updateTime, 1000); // 每秒更新倒计时
 
-            setTimeout(function() {
+            setTimeout(function () {
                 button.disabled = false; // 60秒后将按钮设置为可点击状态
                 clearInterval(countdownInterval); // 清除倒计时定时器
                 button.value = '点击获取验证码'; // 清空倒计时显示
@@ -233,7 +264,7 @@
                 var minutes = Math.floor(secondsLeft / 60);
                 var seconds = secondsLeft % 60;
 
-                button.value = "（"+seconds + '秒）';
+                button.value = "（" + seconds + '秒）';
                 secondsLeft--;
             }
 

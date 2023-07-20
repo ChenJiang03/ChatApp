@@ -14,7 +14,7 @@ a{color:#34538b; text-decoration:underline;}a:hover{color:#F30; text-decoration:
 .rel{position:relative;}.abs{position:absolute;}.fixed{position:fixed;}
 .dn{display:none;}.db{display:block;}.dib{display:inline-block;}.di{display:inline;}
 .dot{background:url(http://www.zhangxinxu.com/wordpress/wp-content/themes/default/images/zxx_dotted.gif) repeat-x 0 bottom;}
-.zxx_out_box{width:70%; min-width:700px; border-left:1px solid white; border-right:1px solid white; margin:0 auto;}
+.zxx_out_box{width:70%; min-width:800px; border-left:1px solid white; border-right:1px solid white; margin:0 auto;}
 .zxx_in_box{min-height:550px; _height:550px; border-left:1px solid #cccccc; border-right:1px solid #cccccc; background:white; padding:1em 2.5em 0;}
 .zxx_header{padding:10px 20px 5px; border-bottom:1px solid #cccccc; overflow:hidden; zoom:1;}
 .zxx_author_time{float:right; margin-top:34px; color:#787878; font-family:"Courier New", Courier, monospace;}

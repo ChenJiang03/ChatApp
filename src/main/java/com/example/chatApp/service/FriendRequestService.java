@@ -1,5 +1,7 @@
 package com.example.chatApp.service;
 
-public interface FriendRequestService
+import com.example.chatApp.pojo.FriendRequest;
+
+public interface FriendRequestService extends CommonService<FriendRequest>
 {
 }

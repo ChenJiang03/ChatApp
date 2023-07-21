@@ -23,11 +23,6 @@ public class CommonWebController
     @Autowired
     private UserService userService;
 
-    @GetMapping("/web/login")
-    public void login()
-    {
-
-    }
     @GetMapping("/web/sendCode")
     @ResponseBody
     public String sendCode(String phone, HttpSession session){
@@ -52,7 +47,11 @@ public class CommonWebController
         return "fail";
     }
 
+    @GetMapping("/web/login")
+    public void login()
+    {
 
+    }
     @PostMapping("/web/login")
     public String login(User user, HttpSession session){
         User findUser = userService.findByUsernameAndPassword(user);

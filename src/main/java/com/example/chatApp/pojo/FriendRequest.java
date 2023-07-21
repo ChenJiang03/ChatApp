@@ -11,9 +11,9 @@ import lombok.Data;
 public class FriendRequest implements Serializable {
     private Integer id;
 
-    private Integer senderId;
+    private User sender;
 
-    private Integer accepterId;
+    private User accepter;
 
     private Date requestTime;
 

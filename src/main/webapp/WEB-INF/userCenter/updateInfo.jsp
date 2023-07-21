@@ -51,14 +51,16 @@
             <a class="mb-xl-3 mb-md-2 nav-link active" data-bs-toggle="pill" href="#nav-tab-user" role="tab">
                 <img src="${path}/static/web/images/user.png" class="avatar sm rounded-circle" alt="user avatar" />
             </a>
-            <a class="mb-xl-3 mb-md-2 nav-link" data-bs-toggle="pill" href="#nav-tab-menu" role="tab"><i class="zmdi zmdi-home"></i></a>
-            <a class="mb-xl-3 mb-md-2 nav-link" data-bs-toggle="pill" href="#nav-tab-notifications" role="tab"><i class="zmdi zmdi-notifications"></i></a>
-            <a class="mb-xl-3 mb-md-2 nav-link d-none d-sm-block flex-grow-1" data-bs-toggle="pill" href="#nav-tab-components" role="tab"><i class="zmdi zmdi-layers"></i></a>
+            <a class="mb-xl-3 mb-md-2 nav-link" data-bs-toggle="pill" href="${path}/userCenter/contacts" role="tab"><i class="zmdi zmdi-home"></i></a>
+<%--            <a class="mb-xl-3 mb-md-2 nav-link" data-bs-toggle="pill" href="#nav-tab-notifications" role="tab"><i class="zmdi zmdi-notifications"></i></a>--%>
+            <a class="mb-xl-3 mb-md-2 nav-link" data-toggle="pill" href="" role="tab" hidden><i class="zmdi zmdi-account-circle"></i></a>
+            <a class="mb-xl-3 mb-md-2 nav-link d-none d-sm-block flex-grow-1" data-bs-toggle="pill" href="" role="tab" hidden><i class="zmdi zmdi-layers" hidden></i></a>
+
             <a class="mt-xl-3 mt-md-2 nav-link light-dark-toggle" href="javascript:void(0);">
                 <i class="zmdi zmdi-brightness-2"></i>
                 <input class="light-dark-btn" type="checkbox">
             </a>
-            <a class="mt-xl-3 mt-md-2 nav-link d-none d-sm-block" href="settings.html" role="tab"><i class="zmdi zmdi-settings"></i></a>
+            <a class="mt-xl-3 mt-md-2 nav-link d-none d-sm-block" href="${path}/userCenter/updateInfo" role="tab"><i class="zmdi zmdi-settings"></i></a>
         </div>
 
         <button type="submit" class="btn sidebar-toggle-btn shadow-sm"><i class="zmdi zmdi-menu"></i></button>
@@ -91,7 +93,7 @@
                         <div class="card-user-detail mt-4">
                             <h5>${user.name}</h5>
                             <span class="text-muted"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5b8bcb6bdb0b9b9b0fbb2a7b0b0bb95b2b8b4bcb9fbb6bab8">[email&#160;protected]</a></span>
-                            <p>+86 ${user.phone} - 中国 (CHINA)</p>
+                            <p>+86 ${user.phone.substring(0,3)}****${user.phone.substring(7,11)} - 中国 (CHINA)</p>
                             <div class="social">
                                 <a class="icon p-2" href="#" data-bs-toggle="tooltip" title="Facebook"><i class="zmdi zmdi-facebook-box"></i></a>
                                 <a class="icon p-2" href="#" data-bs-toggle="tooltip" title="Github"><i class="zmdi zmdi-github-box"></i></a>

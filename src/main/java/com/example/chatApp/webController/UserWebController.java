@@ -1,7 +1,9 @@
 package com.example.chatApp.webController;
 
 import com.example.chatApp.mapper.UserMapper;
+import com.example.chatApp.pojo.FriendRequest;
 import com.example.chatApp.pojo.User;
+import com.example.chatApp.service.FriendRequestService;
 import com.example.chatApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import javax.xml.crypto.Data;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 @Controller
 @RequestMapping("/userCenter")
@@ -21,6 +27,9 @@ public class UserWebController
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private FriendRequestService friendRequestService;
 
     @GetMapping("singleChat")
     public void singleChat()
@@ -100,5 +109,34 @@ public class UserWebController
         return "";
     }
 
+    @GetMapping("contacts")
+    public void contacts(){}
 
+
+    @GetMapping("addFriend")
+    @ResponseBody
+    public String addFriends(String username, String friendRequestMessage, HttpSession session)
+    {
+        User accepter = userService.selectByUsername(username);
+        System.out.println("用户名："+username);
+        System.out.println("验证信息："+friendRequestMessage);
+        User sender = (User) session.getAttribute("user");
+        if (accepter == null)
+        {
+            return "fail";
+        }
+        FriendRequest friendRequest = new FriendRequest();
+        friendRequest.setSender(sender);
+        friendRequest.setAccepter(accepter);
+        friendRequest.setRequestMessage(friendRequestMessage);
+        //获取当前时间
+        LocalDate currentDate = LocalDate.now();
+        //给当前时间加三天，设置为好友请求过期日期
+        LocalDate currentDatePlusThreeDays = currentDate.plusDays(3);
+        //将LocalDate类型转换为Date类型
+        Date date = Date.from(currentDatePlusThreeDays.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        friendRequest.setOutdateTime(date);
+        friendRequestService.insert(friendRequest);
+        return "success";
+    }
 }

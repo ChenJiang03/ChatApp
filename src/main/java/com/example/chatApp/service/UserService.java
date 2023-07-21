@@ -8,6 +8,8 @@ public interface UserService extends CommonService<User>
 
     User findByUsernameAndPassword(User user);
 
+    User selectByUsername(String username);
+
     void update(User user);
 
     void updateUserInfo(User object);

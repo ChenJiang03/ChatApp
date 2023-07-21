@@ -75,11 +75,18 @@
                     <img id="xuwanting" src="${path}/static/web/images/user.png"/>
                     <span id="preview_box" class="crop_preview">
                         <img id="crop_preview" src="${path}/static/web/images/user.png"/>
+
                     </span>
                 </div>
                 点击上传图片<input type="file" id="pictureUpload" value="上传图片">
-                <p class="mt20 mb20"><a href="${path}/userCenter/updateInfo">&lt;&lt; 返回首页</a></p>
 
+
+                <form action="${path}/userCenter/updatePicture" id="pictureSubmitForm">
+                    <img src="" id="picture" alt="">
+                    <input type="file">
+                    <input type="button" id="pictureSubmitBtn" value="提交图片">
+                </form>
+                <p class="mt20 mb20"><a href="${path}/userCenter/updateInfo">&lt;&lt; 返回首页</a></p>
             </div>
         </div>
         <div class="zxx_footer" >
@@ -100,9 +107,13 @@
 
         reader.onload = function (e) {
             const imageSrc = e.target.result;
+            console.log(imageSrc);
             xuwanting.src = imageSrc;
             cropPreview.src = imageSrc;
+            $(".rel mb20").css("overflow","hidden");
             $(".jcrop-holder").css("overflow","hidden");
+            $(".jcrop-holder").css("height","");
+            $(".jcrop-holder > img").css("position","relative");
             $(".jcrop-holder img").each(function(index){
                 this.src = imageSrc;
                 $(this).css("height","auto");
@@ -111,4 +122,11 @@
 
         reader.readAsDataURL(file);
     });
+
+    $("#pictureSubmitBtn").click(function (){
+        $("#picture").src = $("#crop_preview").src;
+        console.log($("#crop_preview").src);
+        // $("#pictureSubmitForm").submit();
+    });
+
 </script>

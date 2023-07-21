@@ -21,10 +21,10 @@ public class UserLoginFilter implements Filter
 
         //如果是登录放行
         String uri = request.getRequestURI();
-//        if(uri.contains("/web/login") || uri.contains("/web/register")){
-//            filterChain.doFilter(servletRequest, servletResponse);
-//            return;
-//        }
+        if(uri.contains("/userCenter/addFriend")){
+            filterChain.doFilter(servletRequest, servletResponse);
+            return;
+        }
         HttpSession session=request.getSession();
         User user=(User) session.getAttribute("user");
         if(user==null){

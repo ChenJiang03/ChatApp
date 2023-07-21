@@ -615,7 +615,7 @@ $.Jcrop = function(obj,opt)
 		/*}}}*/
 
 		var $track = newTracker().mousedown(createDragger('move'))
-				.css({ cursor: 'move', position: 'absolute', zIndex: 360 })
+				.css({ cursor: 'move', position: 'relative', zIndex: 360 })
 
 		$img_holder.append($track);
 		disableHandles();

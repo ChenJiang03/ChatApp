@@ -14,6 +14,12 @@ public interface FriendRequestMapper {
 
     FriendRequest selectByPrimaryKey(Integer id);
 
+    FriendRequest selectByAccepterId(Integer id);
+
+    FriendRequest selectBySenderId(Integer id);
+
+    FriendRequest selectBySenderIdAndAccepterId(FriendRequest record);
+
     int updateByPrimaryKeySelective(FriendRequest record);
 
     int updateByPrimaryKey(FriendRequest record);

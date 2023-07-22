@@ -136,7 +136,7 @@ public class UserWebController
         //将LocalDate类型转换为Date类型
         Date date = Date.from(currentDatePlusThreeDays.atStartOfDay(ZoneId.systemDefault()).toInstant());
         friendRequest.setOutdateTime(date);
-        friendRequestService.insert(friendRequest);
-        return "success";
+        String message = friendRequestService.insertByCondition(friendRequest);
+        return message;
     }
 }

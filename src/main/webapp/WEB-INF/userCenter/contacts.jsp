@@ -57,7 +57,7 @@
                 <img src="${path}/static/web/images/user.png" class="avatar sm rounded-circle" alt="user avatar" />
             </a>
             <a class="mb-xl-3 mb-md-2 nav-link active" data-toggle="pill" href="#nav-tab-chat" role="tab"><i class="zmdi zmdi-comment-alt"></i></a>
-            <a class="mb-xl-3 mb-md-2 nav-link" data-toggle="pill" href="#nav-tab-phone" role="tab"><i class="zmdi zmdi-phone"></i></a>
+            <a class="mb-xl-3 mb-md-2 nav-link" data-toggle="pill" href="#nav-tab-phone" role="tab"><i class="zmdi zmdi-notifications"></i></a>
             <a class="mb-xl-3 mb-md-2 nav-link" data-toggle="pill" href="#nav-tab-contact" role="tab"><i class="zmdi zmdi-account-circle"></i></a>
             <a class="mb-xl-3 mb-md-2 nav-link d-none d-sm-block" data-toggle="pill" href="#nav-tab-pages" role="tab"><i class="zmdi zmdi-layers"></i></a>
         </div>
@@ -1292,11 +1292,15 @@ s0.parentNode.insertBefore(s1,s0);
             console.log(data);
             if (data == "fail")
             {
-                alert("好友申请发送失败");
+                alert("好友申请发送失败！");
             }
-            else
+            else if (data == "exist")
             {
-                alert("好友申请发送成果！");
+                alert("您已经发送过好友申请了，请不要重复发送！");
+            }
+            else if (data == "success")
+            {
+                alert("好友申请发送成功！");
             }
         });
     }

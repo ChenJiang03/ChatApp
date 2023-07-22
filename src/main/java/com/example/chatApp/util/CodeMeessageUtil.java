@@ -21,7 +21,7 @@ public class CodeMeessageUtil
         {
             com.aliyun.dysmsapi20170525.Client client = CodeMeessageUtil.createClient("LTAI5tN7bm6eVC1ARDBoiehY","gCIOF46WdRLHODEFXjdPsnXjKrvY21");
             // 1.发送短信
-            String code1 = 1000+new Random().nextInt(9000)+"";
+            String code1 = 100000+new Random().nextInt(900000)+"";
             SendSmsRequest sendReq = new SendSmsRequest()
                     .setPhoneNumbers(phone)
                     .setSignName("畅聊App")

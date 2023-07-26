@@ -28,8 +28,10 @@
             <div class="card border-0 text-center pt-3 mb-4">
                 <div class="card-body">
                     <div class="card-user-avatar">
-                        <img src="${path}/static/web/images/user.png" alt="avatar" />
-                        <button type="button" class="btn btn-secondary btn-sm"><i class="zmdi zmdi-edit"></i></button>
+                        <img src="${path}/static/uploadImages/${user.picture}" alt="avatar" style="width: 140px; height: 140px"/>
+                        <a href="${path}/userCenter/updatePicture">
+                            <button type="button" class="btn btn-secondary btn-sm"><i class="zmdi zmdi-edit"></i></button>
+                        </a>
                     </div>
                     <div class="card-user-detail mt-4">
                         <h5>${user.name}</h5>

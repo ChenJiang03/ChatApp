@@ -5,21 +5,23 @@ import com.example.chatApp.pojo.FriendRequest;
 import com.example.chatApp.pojo.User;
 import com.example.chatApp.service.FriendRequestService;
 import com.example.chatApp.service.UserService;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.xml.crypto.Data;
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/userCenter")
@@ -96,20 +98,48 @@ public class UserWebController
         return "redirect:/userCenter/updateInfo";
     }
 
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    @ResponseBody
+    public Map<String,String> processMaxUploadSizeExceededException(MaxUploadSizeExceededException e){
+        e.printStackTrace();
+        Map<String,String> map = new HashMap<>();
+        map.put("msg","fail");
+        return map;
+    }
+
     @GetMapping("updatePicture")
     public void updatePicture()
     {
-
     }
 
 
     @PostMapping("updatePicture")
-    public String updatePicture(User user, HttpSession session)
+    @ResponseBody
+    public Map<String, String> updatePicture(User user, HttpSession session, HttpServletRequest request, MultipartFile cropPic)
     {
+        System.out.println("-----------------------");
+        System.out.println(cropPic.getContentType());
+        String filePath = request.getServletContext().getRealPath("/static/uploadImages");
+        String name = UUID.randomUUID().toString();
+       // String oriname = cropPic.getOriginalFilename();
+        //String fileext = FilenameUtils.getExtension(oriname);//获得文件扩展名
+
+        String filename = name+".png";
+
+        File f = new File(filePath+"/"+filename);
+        try {
+            cropPic.transferTo(f);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Map<String,String> map = new HashMap<>();
+        map.put("msg","success");
+        map.put("pic",filename);
+//
         User user1 = (User) session.getAttribute("user");
-        user1.setPicture(user.getPicture());
+        user1.setPicture(filename);
         userService.updateUserPicture(user1);
-        return "";
+        return map;
     }
 
     @GetMapping("contacts")

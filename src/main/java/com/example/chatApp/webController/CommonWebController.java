@@ -90,4 +90,12 @@ public class CommonWebController
         }
         return "ok";
     }
+
+
+    @GetMapping("web/test")
+    @ResponseBody
+    public void test(Integer id)
+    {
+        System.out.println(id);
+    }
 }

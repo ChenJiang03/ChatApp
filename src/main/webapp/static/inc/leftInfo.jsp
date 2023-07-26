@@ -22,7 +22,7 @@
 
             <div class="form-group input-group-lg search mb-3">
                 <i class="zmdi zmdi-search"></i>
-                <input type="text" class="form-control" placeholder="Search...">
+                <input type="text" class="form-control" placeholder="搜索...">
             </div>
 
             <div class="card border-0 text-center pt-3 mb-4">

@@ -6,7 +6,9 @@ import com.example.chatApp.pojo.User;
 import com.example.chatApp.service.FriendRequestService;
 import com.example.chatApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,7 @@ import javax.xml.crypto.Data;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping("/userCenter")
@@ -110,7 +113,21 @@ public class UserWebController
     }
 
     @GetMapping("contacts")
-    public void contacts(){}
+    public void contacts(HttpSession session, Model model){
+
+        User user = (User) session.getAttribute("user");
+        List<FriendRequest> friendRequestList = friendRequestService.selectByAccepterId(user.getId());
+        model.addAttribute("friendRequestList", friendRequestList);
+    }
+
+    @GetMapping("acceptFriendRequest")
+    @ResponseBody
+    public void acceptFriendRequest(Integer friendRequestId, String responseMessage, Integer success)
+    {
+        Date date = new Date();
+        friendRequestService.acceptFriendRequest(date, responseMessage, success, friendRequestId);
+
+    }
 
 
     @GetMapping("addFriend")

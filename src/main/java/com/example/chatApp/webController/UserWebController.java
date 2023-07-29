@@ -1,9 +1,11 @@
 package com.example.chatApp.webController;
 
 import com.example.chatApp.mapper.UserMapper;
+import com.example.chatApp.pojo.Friend;
 import com.example.chatApp.pojo.FriendRequest;
 import com.example.chatApp.pojo.User;
 import com.example.chatApp.service.FriendRequestService;
+import com.example.chatApp.service.FriendService;
 import com.example.chatApp.service.UserService;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.xml.crypto.Data;
@@ -35,6 +38,9 @@ public class UserWebController
 
     @Autowired
     private FriendRequestService friendRequestService;
+
+    @Resource
+    private FriendService friendService;
 
     @GetMapping("singleChat")
     public void singleChat()
@@ -154,8 +160,8 @@ public class UserWebController
     @ResponseBody
     public void acceptFriendRequest(Integer friendRequestId, String responseMessage, Integer success)
     {
-        Date date = new Date();
-        friendRequestService.acceptFriendRequest(date, responseMessage, success, friendRequestId);
+
+        friendRequestService.acceptFriendRequest(responseMessage, success, friendRequestId);
 
     }
 

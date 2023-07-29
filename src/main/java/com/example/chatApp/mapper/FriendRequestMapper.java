@@ -1,6 +1,7 @@
 package com.example.chatApp.mapper;
 
 import com.example.chatApp.pojo.FriendRequest;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
 import java.util.List;
@@ -23,11 +24,11 @@ public interface FriendRequestMapper {
 
     FriendRequest selectBySenderId(Integer id);
 
-    FriendRequest selectBySenderIdAndAccepterId(FriendRequest record);
+    FriendRequest selectBySenderIdAndAccepterId(@Param("senderId") Integer senderId, @Param("accepterId") Integer accepterId);
 
     int updateByPrimaryKeySelective(FriendRequest record);
 
     int updateByPrimaryKey(FriendRequest record);
 
-    int acceptFriendRequest(Date responseTime, String responseMessage, Integer success, Integer id);
+    int acceptFriendRequest(String responseMessage, Integer success, Integer id);
 }

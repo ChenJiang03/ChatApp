@@ -373,4 +373,7 @@
         where id = #{id,jdbcType=INTEGER}
     </update>
 
+    <update id="incrementFriendNum" parameterType="java.lang.Integer">
+        update user set friend_num = friend_num+1 where id = #{id}
+    </update>
 </mapper>

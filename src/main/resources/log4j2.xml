@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration status="OFF">
+    <Appenders><!-- 目的地 -->
+        <!-- 日志输出到控制台 -->
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout>
+                <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+                <!-- %d时间  %p级别  %C类名 %m信息 %n换行 -->
+            </PatternLayout>
+        </Console>
+        <!-- 日志输出到文件 -->
+        <File name="File" fileName="log/log.txt">
+            <PatternLayout>
+                <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="OFF"><!-- debug日志级别 OFF trace debug info warn error fatal all -->
+            <AppenderRef ref="Console"/>
+            <!-- 启用名称为Console的目的地 -->
+            <!--<AppenderRef ref="File"/>-->
+        </Root>
+        <Logger name="com.example.chatApp.mapper" level="debug">
+            <AppenderRef ref="Console"/>
+        </Logger>
+    </Loggers>
+</Configuration>

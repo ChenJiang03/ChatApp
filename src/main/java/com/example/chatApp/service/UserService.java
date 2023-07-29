@@ -20,4 +20,5 @@ public interface UserService extends CommonService<User>
 
     void updateUserPhone(User object);
 
+    void incrementFriendNum(Integer id);
 }

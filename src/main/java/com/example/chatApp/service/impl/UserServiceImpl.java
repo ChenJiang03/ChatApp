@@ -6,6 +6,7 @@ import com.example.chatApp.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 @Service
 public class UserServiceImpl implements UserService
@@ -40,6 +41,12 @@ public class UserServiceImpl implements UserService
     public void updateUserPhone(User object)
     {
         userMapper.updateUserPhone(object);
+    }
+
+    @Override
+    public void incrementFriendNum(Integer id)
+    {
+        userMapper.incrementFriendNum(id);
     }
 
     @Override
@@ -90,5 +97,7 @@ public class UserServiceImpl implements UserService
     {
         return userMapper.selectByUsername(username);
     }
+
+
 
 }

@@ -1,0 +1,18 @@
+<!DOCTYPE configuration PUBLIC "-//mybatis.org/DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- MyBatis信息 输出到日志 -->
+    <settings>
+        <setting name="logImpl" value="log4j2"/>
+    </settings>
+
+    <!-- 配置pageHelper的分页 -->
+    <!-- 配置拦截器 -->
+<!--    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            &lt;!&ndash; 设置数据库  数据库方言 &ndash;&gt;
+            <property name="helperDialect" value="mysql"/>
+            &lt;!&ndash; 是否启用合理化建议  页码小于1  默认显示第一页  页码大于总页数  默认显示最后一页 &ndash;&gt;
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>-->
+</configuration>

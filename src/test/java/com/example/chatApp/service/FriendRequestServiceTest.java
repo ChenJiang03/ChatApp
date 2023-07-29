@@ -17,7 +17,10 @@ import java.util.List;
 public class FriendRequestServiceTest
 {
     @Resource
-    FriendRequestMapper friendRequestMapper;
+    private FriendRequestMapper friendRequestMapper;
+
+    @Resource
+    private FriendRequestService friendRequestService;
 
     @Test
     public void testSelectByAccepterId()
@@ -28,14 +31,8 @@ public class FriendRequestServiceTest
     @Test
     public void selectBySenderIdAndAccepterId()
     {
-        FriendRequest friendRequest = new FriendRequest();
-        User user1 = new User();
-        User user2 = new User();
-        user1.setId(2);
-        user2.setId(6);
-        friendRequest.setSender(user1);
-        friendRequest.setAccepter(user2);
-        FriendRequest friendRequest1 = friendRequestMapper.selectBySenderIdAndAccepterId(friendRequest);
+//        FriendRequest friendRequest = friendRequestMapper.selectByPrimaryKey(9);
+        FriendRequest friendRequest1 = friendRequestMapper.selectBySenderIdAndAccepterId(5,6);
         System.out.println(friendRequest1);
     }
 
@@ -45,6 +42,9 @@ public class FriendRequestServiceTest
         Date date = new Date();
         System.out.println(date);
     }
-
+    @Test
+    public void testAcceptFriendRequest(){
+        friendRequestService.acceptFriendRequest("aaa",1,6);
+    }
 
 }

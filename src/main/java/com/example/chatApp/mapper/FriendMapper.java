@@ -14,6 +14,8 @@ public interface FriendMapper {
 
     Friend selectByPrimaryKey(Integer id);
 
+    Friend selectByAccepterAndSender(Integer accepterId, Integer senderId);
+
     int updateByPrimaryKeySelective(Friend record);
 
     int updateByPrimaryKey(Friend record);

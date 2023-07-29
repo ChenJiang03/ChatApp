@@ -26,6 +26,9 @@
 <body>
 <div id="layout" class="theme-cyan">
 
+<%----------------------------------------------------------------------------------------%>
+<%--------------------------------------左边图标栏------------------------------------------%>
+<%----------------------------------------------------------------------------------------%>
     <div class="navigation navbar justify-content-center py-xl-4 py-md-3 py-0 px-3">
 
         <a href="index.html" title="Postman" class="brand">
@@ -92,6 +95,9 @@
             </svg>
         </a>
 
+<%----------------------------------------------------------------------------------------%>
+<%--------------------------------------左边图标栏------------------------------------------%>
+<%----------------------------------------------------------------------------------------%>
         <div class="nav flex-md-column nav-pills flex-grow-1" role="tablist" aria-orientation="vertical">
             <a class="mb-xl-3 mb-md-2 nav-link" data-toggle="pill" href="#nav-tab-user" role="tab">
                 <img src="${path}/static/web/images/user.png" class="avatar sm rounded-circle" alt="user avatar"/>
@@ -120,8 +126,13 @@
 
 
     <div class="sidebar border-end py-xl-4 py-3 px-xl-4 px-3">
+
+
         <div class="tab-content">
 
+<%----------------------------------------左边个人信息栏--------------------------------------%>
+<%----------------------------------------左边个人信息栏--------------------------------------%>
+<%----------------------------------------左边个人信息栏--------------------------------------%>
             <div class="tab-pane fade" id="nav-tab-user" role="tabpanel">
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -139,9 +150,15 @@
                 <div class="card border-0 text-center pt-3 mb-4">
                     <div class="card-body">
                         <div class="card-user-avatar">
-                            <img src="${path}/static/web/images/user.png" alt="avatar"/>
-                            <button type="button" class="btn btn-secondary btn-sm"><i class="zmdi zmdi-edit"></i>
-                            </button>
+                            <c:if test="${user.picture eq null}" var="flag">
+                                <img src="${path}/static/web/images/user.png" alt="avatar"/>
+                            </c:if>
+                            <c:if test="${not flag}">
+                                <img src="${path}/static/uploadImages/${user.picture}" alt="avatar" style="width: 140px; height: 140px"/>
+                            </c:if>
+                            <a href="${path}/userCenter/updatePicture">
+                                <button type="button" class="btn btn-secondary btn-sm"><i class="zmdi zmdi-edit"></i></button>
+                            </a>
                         </div>
                         <div class="card-user-detail mt-4">
                             <h4>${user.name}</h4>
@@ -213,6 +230,10 @@
                 </div>
             </div>
 
+
+<%-----------------------------------------好友聊天界面---------------------------------------%>
+<%-----------------------------------------好友聊天界面---------------------------------------%>
+<%-----------------------------------------好友聊天界面---------------------------------------%>
             <div class="tab-pane fade show active" id="nav-tab-chat" role="tabpanel">
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -611,6 +632,9 @@
                 </ul>
             </div>
 
+<%-------------------------------------------新的通知----------------------------------------%>
+<%-------------------------------------------新的通知----------------------------------------%>
+<%-------------------------------------------新的通知----------------------------------------%>
             <div class="tab-pane fade" id="nav-tab-phone" role="tabpanel">
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -646,19 +670,19 @@
                                 </div>
                             </c:if>
                             <c:if test="${not flag}">
-                                <form action="">
-                                    <div class="hover_action">
-                                        <button type="button" class="btn btn-link text-info">
-                                            <input type="button" value="接受" id="acceptRequest${friendRequest.id}" data-id="${friendRequest.id}">
-                                        </button>
-                                        <button type="button" class="btn btn-link text-warning">
-                                            <input type="button" value="拒绝" id="refuseRequest${friendRequest.id}" data-id="${friendRequest.id}">
-                                        </button>
-                                        <button type="button" class="btn btn-link text-danger">
-                                            <input type="button" value="忽略" id="ignoreRequest${friendRequest.id}" data-id="${friendRequest.id}">
-                                        </button>
-                                    </div>
-                                </form>
+
+                                <div class="hover_action" id="requestActionDiv${friendRequest.id}">
+                                    <button type="button" class="btn btn-link text-info">
+                                        <input type="button" value="接受" id="acceptRequest${friendRequest.id}" data-id="${friendRequest.id}">
+                                    </button>
+                                    <button type="button" class="btn btn-link text-warning">
+                                        <input type="button" value="拒绝" id="refuseRequest${friendRequest.id}" data-id="${friendRequest.id}">
+                                    </button>
+                                    <button type="button" class="btn btn-link text-danger">
+                                        <input type="button" value="忽略" id="ignoreRequest${friendRequest.id}" data-id="${friendRequest.id}">
+                                    </button>
+                                </div>
+
                             </c:if>
 
 
@@ -685,7 +709,9 @@
                     </c:forEach>
                 </ul>
             </div>
-
+<%----------------------------------------好友栏+添加好友--------------------------------------%>
+<%----------------------------------------好友栏+添加好友--------------------------------------%>
+<%----------------------------------------好友栏+添加好友--------------------------------------%>
             <div class="tab-pane fade" id="nav-tab-contact" role="tabpanel">
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -1019,7 +1045,9 @@
         </div>
     </div>
 
-
+<%-------------------------------------------右边图标栏---------------------------------------%>
+<%-------------------------------------------右边图标栏---------------------------------------%>
+<%-------------------------------------------右边图标栏---------------------------------------%>
     <div class="rightbar d-none d-md-block">
 
 
@@ -1374,6 +1402,8 @@ s0.parentNode.insertBefore(s1,s0);
                 alert("您已经发送过好友申请了，请不要重复发送！");
             } else if (data == "success") {
                 alert("好友申请发送成功！");
+            } else if (data == "already"){
+                alert("你们已经是好友了！不要重复发送申请");
             }
         });
     }
@@ -1400,7 +1430,8 @@ s0.parentNode.insertBefore(s1,s0);
         $.get("${path}/userCenter/acceptFriendRequest?friendRequestId="+friendRequestId+"&responseMessage="+responseMessage+"&success=1",
         function(data)
         {
-
+            $("#requestActionDiv"+friendRequestId).html("<p>请求已失效</p>");
+            alert("好友已成功添加！");
         });
     });
     $("input[id^='refuseRequest']").click(function (){
@@ -1414,7 +1445,7 @@ s0.parentNode.insertBefore(s1,s0);
         $.get("${path}/userCenter/acceptFriendRequest?friendRequestId="+friendRequestId+"&responseMessage="+responseMessage+"&success=2",
         function (data)
         {
-
+            $("#requestActionDiv"+friendRequestId).html("<p>请求已失效</p>");
         });
     });
     $("input[id^='ignoreRequest']").click(function (){
@@ -1423,7 +1454,8 @@ s0.parentNode.insertBefore(s1,s0);
         $.get("${path}/userCenter/acceptFriendRequest?friendRequestId="+friendRequestId+"&responseMessage="+responseMessage+"&success=3",
         function (data)
         {
-
+            alert("好友申请已成功忽略");
+            $("#requestActionDiv"+friendRequestId).html("<p>请求已失效</p>");
         });
     });
 </script>

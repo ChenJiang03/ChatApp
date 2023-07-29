@@ -33,4 +33,5 @@ public interface UserMapper {
 
     void updateUserPhone(User record);
 
+    void incrementFriendNum(Integer id);
 }

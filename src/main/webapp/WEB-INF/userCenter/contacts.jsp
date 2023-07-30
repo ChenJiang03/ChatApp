@@ -10,6 +10,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <c:set var="user" value="${sessionScope.user}"></c:set>
 <c:set var="friendRequestList" value="${requestScope.friendRequestList}"></c:set>
+<c:set var="friendList" value="${requestScope.friendList}"></c:set>
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
@@ -741,261 +742,42 @@
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <div class="hover_action">
-                            <button type="button" class="btn btn-link text-info"><i class="zmdi zmdi-eye"></i></button>
-                            <button type="button" class="btn btn-link text-warning"><i class="zmdi zmdi-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-link text-danger"><i class="zmdi zmdi-delete"></i>
-                            </button>
-                        </div>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar me-3">
-                                        <img class="avatar rounded-circle"
-                                             src="${path}/static/web/images/xs/avatar1.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">Amelia Green</h6>
+                    <c:forEach items="${friendList}" var="friend">
+                        <li>
+                            <div class="hover_action">
+                                <button type="button" class="btn btn-link text-info"><i class="zmdi zmdi-eye"></i></button>
+                                <button type="button" class="btn btn-link text-warning"><i class="zmdi zmdi-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-link text-danger"><i class="zmdi zmdi-delete"></i>
+                                </button>
+                            </div>
+                            <a href="#" class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <div class="avatar me-3">
+                                            <img class="avatar rounded-circle"
+                                                 src="${path}/static/uploadImages/${friend.picture}" alt="avatar">
                                         </div>
-                                        <div class="text-truncate">
-                                            last seen 2 hours ago
+                                        <div class="media-body overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="text-truncate mb-0 me-auto">${friend.name}</h6>
+                                            </div>
+                                            <div class="text-truncate">
+                                                ${friend.signature}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="hover_action">
-                            <button type="button" class="btn btn-link text-info"><i class="zmdi zmdi-eye"></i></button>
-                            <button type="button" class="btn btn-link text-warning"><i class="zmdi zmdi-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-link text-danger"><i class="zmdi zmdi-delete"></i>
-                            </button>
-                        </div>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar me-3">
-                                        <img class="avatar rounded-circle"
-                                             src="${path}/static/web/images/xs/avatar3.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">Ava Green</h6>
-                                        </div>
-                                        <div class="text-truncate">
-                                            last seen 1 hours ago
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="header d-flex justify-content-between ps-3 pe-3 mb-1">
-                        <span>C</span>
-                    </li>
-                    <li>
-                        <div class="hover_action">
-                            <button type="button" class="btn btn-link text-info"><i class="zmdi zmdi-eye"></i></button>
-                            <button type="button" class="btn btn-link text-warning"><i class="zmdi zmdi-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-link text-danger"><i class="zmdi zmdi-delete"></i>
-                            </button>
-                        </div>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar me-3">
-                                        <img class="avatar rounded-circle"
-                                             src="${path}/static/web/images/xs/avatar4.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">Charlotte Green</h6>
-                                        </div>
-                                        <div class="text-truncate">
-                                            last seen 6 hours ago
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="hover_action">
-                            <button type="button" class="btn btn-link text-info"><i class="zmdi zmdi-eye"></i></button>
-                            <button type="button" class="btn btn-link text-warning"><i class="zmdi zmdi-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-link text-danger"><i class="zmdi zmdi-delete"></i>
-                            </button>
-                        </div>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar me-3">
-                                        <img class="avatar rounded-circle"
-                                             src="${path}/static/web/images/xs/avatar5.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">Chloe Green</h6>
-                                        </div>
-                                        <div class="text-truncate">
-                                            last seen 3 hours ago
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="hover_action">
-                            <button type="button" class="btn btn-link text-info"><i class="zmdi zmdi-eye"></i></button>
-                            <button type="button" class="btn btn-link text-warning"><i class="zmdi zmdi-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-link text-danger"><i class="zmdi zmdi-delete"></i>
-                            </button>
-                        </div>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar me-3">
-                                        <img class="avatar rounded-circle"
-                                             src="${path}/static/web/images/xs/avatar6.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">Charles Green</h6>
-                                        </div>
-                                        <div class="text-truncate">
-                                            last seen 2 hours ago
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="header d-flex justify-content-between ps-3 pe-3 mb-1">
-                        <span>D</span>
-                    </li>
-                    <li>
-                        <div class="hover_action">
-                            <button type="button" class="btn btn-link text-info"><i class="zmdi zmdi-eye"></i></button>
-                            <button type="button" class="btn btn-link text-warning"><i class="zmdi zmdi-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-link text-danger"><i class="zmdi zmdi-delete"></i>
-                            </button>
-                        </div>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar me-3">
-                                        <img class="avatar rounded-circle"
-                                             src="${path}/static/web/images/xs/avatar4.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">David Green</h6>
-                                        </div>
-                                        <div class="text-truncate">
-                                            last seen 6 hours ago
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="header d-flex justify-content-between ps-3 pe-3 mb-1">
-                        <span>M</span>
-                    </li>
-                    <li>
-                        <div class="hover_action">
-                            <button type="button" class="btn btn-link text-info"><i class="zmdi zmdi-eye"></i></button>
-                            <button type="button" class="btn btn-link text-warning"><i class="zmdi zmdi-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-link text-danger"><i class="zmdi zmdi-delete"></i>
-                            </button>
-                        </div>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar me-3">
-                                        <img class="avatar rounded-circle"
-                                             src="${path}/static/web/images/xs/avatar8.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">Michael Green</h6>
-                                        </div>
-                                        <div class="text-truncate">
-                                            last seen 6 hours ago
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="hover_action">
-                            <button type="button" class="btn btn-link text-info"><i class="zmdi zmdi-eye"></i></button>
-                            <button type="button" class="btn btn-link text-warning"><i class="zmdi zmdi-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-link text-danger"><i class="zmdi zmdi-delete"></i>
-                            </button>
-                        </div>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar me-3">
-                                        <img class="avatar rounded-circle"
-                                             src="${path}/static/web/images/xs/avatar8.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">Mohammad</h6>
-                                        </div>
-                                        <div class="text-truncate">
-                                            last seen 6 hours ago
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="header d-flex justify-content-between ps-3 pe-3 mb-1">
-                        <span>T</span>
-                    </li>
-                    <li>
-                        <div class="hover_action">
-                            <button type="button" class="btn btn-link text-info"><i class="zmdi zmdi-eye"></i></button>
-                            <button type="button" class="btn btn-link text-warning"><i class="zmdi zmdi-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-link text-danger"><i class="zmdi zmdi-delete"></i>
-                            </button>
-                        </div>
-                        <a href="#" class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar me-3">
-                                        <img class="avatar rounded-circle"
-                                             src="${path}/static/web/images/xs/avatar9.jpg" alt="avatar">
-                                    </div>
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 me-auto">Tommy Green</h6>
-                                        </div>
-                                        <div class="text-truncate">
-                                            last seen 6 hours ago
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                    </c:forEach>
+<%--                    <li class="header d-flex justify-content-between ps-3 pe-3 mb-1">--%>
+<%--                        <span>D</span>--%>
+<%--                    </li>--%>
+<%--                    <li class="header d-flex justify-content-between ps-3 pe-3 mb-1">--%>
+<%--                        <span>T</span>--%>
+<%--                    </li>--%>
+
                 </ul>
             </div>
 

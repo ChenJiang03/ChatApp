@@ -14,17 +14,17 @@
             <id column="sender_id" property="id"></id>
             <result column="sender_username" property="username"></result>
             <result column="sender_name" property="name"></result>
-            <result column="sender_picture"></result>
-            <result column="sender_signature"></result>
-            <result column="sender_online"></result>
+            <result column="sender_picture" property="picture"></result>
+            <result column="sender_signature" property="signature"></result>
+            <result column="sender_online" property="online"></result>
         </association>
         <association property="accepter" javaType="com.example.chatApp.pojo.User" autoMapping="true">
             <id column="accepter_id" property="id"></id>
             <result column="accepter_username" property="username"></result>
             <result column="accepter_name" property="name"></result>
-            <result column="accepter_picture"></result>
-            <result column="accepter_signature"></result>
-            <result column="accepter_online"></result>
+            <result column="accepter_picture" property="picture"></result>
+            <result column="accepter_signature" property="signature"></result>
+            <result column="accepter_online" property="online"></result>
         </association>
         <association property="friendRequest" javaType="com.example.chatApp.pojo.FriendRequest" autoMapping="true">
             <id column="friend_request_id" property="id"></id>
@@ -72,6 +72,28 @@
         WHERE
             ((friend.accepter_id = #{param1} and friend.sender_id = #{param2}) OR
              (friend.accepter_id = #{param2} and friend.sender_id = #{param1})) and friend.enable = 1
+    </select>
+
+    <select id="selectFriends" parameterType="java.lang.Integer" resultMap="BaseResultMap" resultType="com.example.chatApp.pojo.Friend">
+        select
+            accepter.id accepter_id,
+            accepter.username accepter_username,
+            accepter.name accepter_name,
+            accepter.picture accepter_picture,
+            accepter.signature accepter_signature,
+            accepter.online accepter_online,
+            sender.id sender_id,
+            sender.username sender_username,
+            sender.name sender_name,
+            sender.picture sender_picture,
+            sender.signature sender_signature,
+            sender.online sender_online,
+            friend.*
+        from friend
+                 left join user as accepter on friend.accepter_id = accepter.id
+                 left join user as sender on friend.sender_id = sender.id
+        WHERE
+            (friend.accepter_id = #{id} OR friend.sender_id = #{id}) and friend.enable = 1
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         <!--

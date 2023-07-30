@@ -154,6 +154,8 @@ public class UserWebController
         User user = (User) session.getAttribute("user");
         List<FriendRequest> friendRequestList = friendRequestService.selectByAccepterId(user.getId());
         model.addAttribute("friendRequestList", friendRequestList);
+        List<User> friendList = friendService.selectFriends(user.getId());
+        model.addAttribute("friendList", friendList);
     }
 
     @GetMapping("acceptFriendRequest")

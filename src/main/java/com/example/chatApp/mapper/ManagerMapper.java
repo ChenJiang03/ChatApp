@@ -14,6 +14,8 @@ public interface ManagerMapper {
 
     Manager selectByPrimaryKey(Integer id);
 
+    Manager selectByUsernameAndPassword(Manager record);
+
     int updateByPrimaryKeySelective(Manager record);
 
     int updateByPrimaryKey(Manager record);

@@ -11,18 +11,17 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/manageWeb")
 public class CommonManageController
 {
     @Resource
     ManagerService managerService;
-    @GetMapping("login")
+    @GetMapping("/manageWeb/login")
     public void login()
     {
 
     }
 
-    @PostMapping("login")
+    @PostMapping("/manageWeb/login")
     public String login(HttpSession session, Manager manager)
     {
         Manager manager1 = managerService.selectByUsernameAndPassword(manager);
@@ -32,5 +31,11 @@ public class CommonManageController
             return "redirect:/manage/index";
         }
         return "redirect:/manageWeb/login";
+    }
+
+    @GetMapping("/manage/index")
+    public void index()
+    {
+
     }
 }

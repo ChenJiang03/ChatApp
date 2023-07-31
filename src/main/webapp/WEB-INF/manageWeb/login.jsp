@@ -4,10 +4,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>登录</title>
-    <link rel="stylesheet" type="text/css" href="${path}/static/manage/css/public.css" />
-    <link rel="stylesheet" type="text/css" href="${path}/static/manage/css/page.css" />
+    <link rel="stylesheet" type="text/css" href="${path}/static/manage/css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="${path}/static/manage/css/page.css"/>
     <script type="text/javascript" src="${path}/static/manage/js/jquery.min.js"></script>
     <script type="text/javascript" src="${path}/static/manage/js/public.js"></script>
 </head>
@@ -15,7 +15,7 @@
 
 <!-- 登录body -->
 <div class="logDiv">
-    <img class="logBanner" src="${path}/static/manage/img/logBanner.png" />
+    <img class="logBanner" src="${path}/static/manage/img/logBanner.png"/>
     <div class="logGet">
         <!-- 头部提示信息 -->
         <div class="logD logDtip">
@@ -23,15 +23,17 @@
         </div>
         <form action="${path}/manageWeb/login" id="loginForm" method="post">
             <div class="lgD">
-                <img class="img1" src="${path}/static/manage/img/logName.png" /><input type="text"
-                                                                                       placeholder="输入用户名" name="username" id="username" />
+                <img class="img1" src="${path}/static/manage/img/logName.png"/>
+                <input type="text" placeholder="输入用户名" name="username" id="username"/>
             </div>
             <div class="lgD">
-                <img class="img1" src="${path}/static/manage/img/logPwd.png" /><input type="text"
-                                                                                      placeholder="输入用户密码" name="password" id="password"/>
+                <img class="img1" src="${path}/static/manage/img/logPwd.png"/>
+                <input type="text" placeholder="输入用户密码" name="password" id="password"/>
             </div>
             <div class="logC">
-                <a href="index.html" target="_self"><button onclick="submitLogin()">登 录</button></a>
+                <a href="index.html" target="_self">
+                    <button onclick="submitLogin()">登 录</button>
+                </a>
             </div>
         </form>
     </div>
@@ -41,7 +43,7 @@
 <!-- 登录页面底部 -->
 <div class="logFoot">
     <p class="p1">版权所有：畅聊App</p>
-<%--    <p class="p2">123456789</p>--%>
+    <%--    <p class="p2">123456789</p>--%>
     <img src="${path}/static/web/images/logo.png" alt="" style="width: 200px">
 </div>
 <!-- 登录页面底部end -->
@@ -50,8 +52,7 @@
 </html>
 <script type="text/javascript" src="${path}/static/web/vendor/jquery/jquery-3.6.4.min.js"></script>
 <script type="text/javascript">
-    function submitLogin()
-    {
+    function submitLogin() {
         $("#loginForm").submit();
     }
 </script>

@@ -52,7 +52,7 @@
             <dd>
                 <img class="coin11" src="${path}/static/manage/img/coin111.png"/>
                 <img class="coin22" src="${path}/static/manage/img/coin222.png"/>
-                <a class="cks" href="p3.html" target="main">用户列表</a>
+                <a class="cks" href="${path}/manage/user/list" target="main">用户列表</a>
                 <img class="icon5" src="${path}/static/manage/img/coin21.png"/>
             </dd>
             <dd>
@@ -92,7 +92,7 @@
             <dd>
                 <img class="coin11" src="${path}/static/manage/img/coin111.png"/>
                 <img class="coin22" src="${path}/static/manage/img/coin222.png"/>
-                <a class="cks">管理员列表</a>
+                <a class="cks" target="main" href="${path}/manage/manager/list">管理员列表</a>
                 <img class="icon5" src="${path}/static/manage/img/coin21.png"/>
             </dd>
         </dl>

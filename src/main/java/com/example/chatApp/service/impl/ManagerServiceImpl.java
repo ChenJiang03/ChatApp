@@ -75,5 +75,11 @@ public class ManagerServiceImpl implements ManagerService
         return pageInfo;
     }
 
+    @Override
+    public int BatchDeleteByPrimaryKey(List<Integer> managerIdList)
+    {
+        return managerMapper.BatchDeleteByPrimaryKey(managerIdList);
+    }
+
 
 }

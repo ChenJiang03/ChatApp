@@ -8,6 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 @ExtendWith(SpringExtension.class)
@@ -48,5 +49,16 @@ public class ManagerServiceTest
     {
         Manager manager = managerService.findById(2);
         System.out.println(manager);
+    }
+
+    @Test
+    public void testBatchDelete()
+    {
+        List<Integer> managerIdList = new ArrayList<>();
+        managerIdList.add(12);
+        managerIdList.add(13);
+        managerIdList.add(11);
+        managerIdList.add(10);
+        managerService.BatchDeleteByPrimaryKey(managerIdList);
     }
 }

@@ -83,6 +83,7 @@
             <div class="conShow">
                 <table border="1" cellspacing="0" cellpadding="0">
                     <tr>
+                        <td width="66px" class="tdColor tdC"><input id="allChoose" type="checkbox"></td>
                         <td width="66px" class="tdColor tdC">id</td>
                         <td width="435px" class="tdColor">用户名</td>
                         <td width="400px" class="tdColor">密码</td>
@@ -91,6 +92,7 @@
                     </tr>
                     <c:forEach items="${managerPageInfo.list}" var="manager">
                         <tr height="40px">
+                            <td><input type="checkbox" class="check"></td>
                             <td>${manager.id}</td>
                             <td>${manager.username}</td>
                             <td>********</td>

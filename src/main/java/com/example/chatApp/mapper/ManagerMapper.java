@@ -23,4 +23,6 @@ public interface ManagerMapper {
     int updateByPrimaryKeySelective(Manager record);
 
     int updateByPrimaryKey(Manager record);
+
+    int BatchDeleteByPrimaryKey(List<Integer> managerIdList);
 }

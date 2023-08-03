@@ -11,4 +11,6 @@ public interface ManagerService extends CommonService<Manager>
     Manager selectByUsernameAndPassword(Manager record);
 
     PageInfo<Manager> selectAllCommonManagerByPageNum(Integer pageNum, Integer pageSize);
+
+    int BatchDeleteByPrimaryKey(List<Integer> managerIdList);
 }

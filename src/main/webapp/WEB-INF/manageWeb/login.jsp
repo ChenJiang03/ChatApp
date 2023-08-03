@@ -28,7 +28,7 @@
             </div>
             <div class="lgD">
                 <img class="img1" src="${path}/static/manage/img/logPwd.png"/>
-                <input type="text" placeholder="输入用户密码" name="password" id="password"/>
+                <input type="password" placeholder="输入用户密码" name="password" id="password"/>
             </div>
             <div class="logC">
                 <a href="index.html" target="_self">

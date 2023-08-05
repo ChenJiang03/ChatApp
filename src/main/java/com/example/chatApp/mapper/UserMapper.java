@@ -9,7 +9,14 @@ import java.util.List;
 */
 public interface UserMapper {
     List<User> list();
+
+    List<User> listWithoutDisable();
+
+    List<User> listWithDisable();
+
     int deleteByPrimaryKey(Integer id);
+
+    int batchDeleteByPrimaryKey(List<Integer> userIdList);
 
     int insert(User record);
 
@@ -34,4 +41,8 @@ public interface UserMapper {
     void updateUserPhone(User record);
 
     void incrementFriendNum(Integer id);
+
+    void disableUser(Integer id);
+
+    void enableUser(Integer id);
 }

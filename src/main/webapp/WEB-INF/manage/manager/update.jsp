@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
-<c:set var="manager" value="${requestScope.manager}"></c:set>
+<c:set var="friend" value="${requestScope.manager}"></c:set>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="${path}/static/manage/css/css.css"/>
@@ -30,15 +30,15 @@
             </div>
             <div class="baBody">
                 <form action="${path}/manage/manager/update" method="post">
-                    <input type="text" id="id" name="id" value="${manager.id}" hidden>
+                    <input type="text" id="id" name="id" value="${friend.id}" hidden>
                     <div class="bbD">
-                        &nbsp;&nbsp;&nbsp;用户名：<input type="text" id="username" name="username" class="input3" value="${manager.username}"/>
+                        &nbsp;&nbsp;&nbsp;用户名：<input type="text" id="username" name="username" class="input3" value="${friend.username}"/>
                     </div>
                     <div class="bbD">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password" id="password" name="password" class="input3" value="${manager.password}"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password" id="password" name="password" class="input3" value="${friend.password}"/>
                     </div>
                     <div class="bbD">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昵称：<input type="text" id="name" name="name" class="input3" value="${manager.name}"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昵称：<input type="text" id="name" name="name" class="input3" value="${friend.name}"/>
                     </div>
                     <div class="bbD">
                         <p class="bbDP">

@@ -9,7 +9,6 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @Service
@@ -31,9 +30,9 @@ public class ManagerServiceImpl implements ManagerService
     }
 
     @Override
-    public void delete(Integer id)
+    public int delete(Integer id)
     {
-
+        return managerMapper.deleteByPrimaryKey(id);
     }
 
     @Override

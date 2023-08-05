@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
-<c:set var="user" value="${sessionScope.user}"></c:set>
+<c:set var="friend" value="${sessionScope.user}"></c:set>
 <html lang="en">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -87,7 +87,7 @@
                                     <div class="d-flex align-items-center mb-1">
                                         <h6 class="fw-bold text-truncate mb-0 me-auto">设置</h6>
                                     </div>
-                                    <div class="text-truncate">上次更新时间: ${user.updateTime}</div>
+                                    <div class="text-truncate">上次更新时间: ${friend.updateTime}</div>
                                 </div>
                             </div>
                         </div>
@@ -128,8 +128,8 @@
                                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <input type="text" name="id" value="${user.id}" hidden>
-                                                            <input type="text" name="name" id="name" class="form-control form-control-lg" placeholder="请输入你的名字" value="${user.name}">
+                                                            <input type="text" name="id" value="${friend.id}" hidden>
+                                                            <input type="text" name="name" id="name" class="form-control form-control-lg" placeholder="请输入你的名字" value="${friend.name}">
                                                             <span id="nameMsg"></span>
                                                         </div>
                                                     </div>
@@ -137,7 +137,7 @@
                                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <input type="text" name="email" id="email" class="form-control form-control-lg" placeholder="请输入邮箱" value="${user.email}">
+                                                            <input type="text" name="email" id="email" class="form-control form-control-lg" placeholder="请输入邮箱" value="${friend.email}">
                                                             <span id="emailMsg"></span>
                                                         </div>
                                                     </div>
@@ -145,7 +145,7 @@
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <textarea rows="4" name="signature" id="signature" class="form-control" placeholder="请输入个人简介">${user.signature}</textarea>
+                                                            <textarea rows="4" name="signature" id="signature" class="form-control" placeholder="请输入个人简介">${friend.signature}</textarea>
                                                             <span id="signatureMsg"></span>
                                                         </div>
                                                     </div>
@@ -723,7 +723,7 @@
 
     function checkOldPhone(){
         var oldPhone = $("#oldPhone").val();
-        var oldPhoneValue = "${user.phone}";
+        var oldPhoneValue = "${friend.phone}";
         if (oldPhone != oldPhoneValue) {
             $("#oldPhoneMsg").html("*");
             $("#oldPhoneMsg").css("color", "red");

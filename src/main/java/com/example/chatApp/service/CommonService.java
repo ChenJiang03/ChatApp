@@ -6,7 +6,7 @@ public interface CommonService<T>
 {
     void insert(T object);
     void update(T object);
-    void delete(Integer id);
+    int delete(Integer id);
     void delete(String ids);
     T findById(Integer id);
     List<T> findAll();

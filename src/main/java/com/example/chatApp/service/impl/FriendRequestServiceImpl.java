@@ -1,7 +1,6 @@
 package com.example.chatApp.service.impl;
 
 import com.example.chatApp.mapper.FriendRequestMapper;
-import com.example.chatApp.mapper.UserMapper;
 import com.example.chatApp.pojo.Friend;
 import com.example.chatApp.pojo.FriendRequest;
 import com.example.chatApp.service.FriendRequestService;
@@ -10,7 +9,6 @@ import com.example.chatApp.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -55,9 +53,9 @@ public class FriendRequestServiceImpl implements FriendRequestService
     }
 
     @Override
-    public void delete(Integer id)
+    public int delete(Integer id)
     {
-
+        return 0;
     }
 
     @Override

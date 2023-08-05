@@ -1,6 +1,9 @@
 package com.example.chatApp.service;
 
 import com.example.chatApp.pojo.User;
+import com.github.pagehelper.PageInfo;
+
+import java.util.List;
 
 public interface UserService extends CommonService<User>
 {
@@ -21,4 +24,14 @@ public interface UserService extends CommonService<User>
     void updateUserPhone(User object);
 
     void incrementFriendNum(Integer id);
+
+    void disableUser(Integer id);
+
+    void enableUser(Integer id);
+
+    int batchDeleteByPrimaryKey(List<Integer> userIdList);
+
+    PageInfo<User> findAllByPageNum(Integer pageNum, Integer pageSize);
+
+    PageInfo<User> findDisableByPageNum(Integer pageNum, Integer pageSize);
 }

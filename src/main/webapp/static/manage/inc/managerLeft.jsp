@@ -58,7 +58,7 @@
             <dd>
                 <img class="coin11" src="${path}/static/manage/img/coin111.png"/>
                 <img class="coin22" src="${path}/static/manage/img/coin222.png"/>
-                <a class="cks" href="p2.html" target="main">用户黑名单</a>
+                <a class="cks" href="${path}/manage/user/disabledList" target="main">用户黑名单</a>
                 <img class="icon5" src="${path}/static/manage/img/coin21.png"/>
             </dd>
         </dl>

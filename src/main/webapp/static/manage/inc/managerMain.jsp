@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
-<c:set var="manager" value="${sessionScope.manager}"></c:set>
+<c:set var="friend" value="${sessionScope.manager}"></c:set>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -55,7 +55,7 @@
         <!-- MainForm -->
         <div id="MainForm">
             <div class="form_boxB">
-                <h2>${manager.name}，欢迎来到畅聊APP后台管理系统</h2>
+                <h2>${friend.name}，欢迎来到畅聊APP后台管理系统</h2>
                 <p class="msg">点击左侧选择您要管理的内容</p>
             </div>
         </div>

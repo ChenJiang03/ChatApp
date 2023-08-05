@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
-<c:set var="manager" value="${sessionScope.manager}"></c:set>
+<c:set var="friend" value="${sessionScope.manager}"></c:set>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -26,7 +26,7 @@
         <img class="headLogo" src="${path}/static/web/images/logo.png" style="width: 190px"/>
     </div>
     <div class="headR">
-        <span style="color:#FFF">欢迎：${manager.name}</span> <a href="head2.html" rel="external">【退出】</a>
+        <span style="color:#FFF">欢迎：${friend.name}</span> <a href="head2.html" rel="external">【退出】</a>
     </div>
 </div>
 </body>

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
-<c:set var="user" value="${sessionScope.user}"></c:set>
+<c:set var="friend" value="${sessionScope.user}"></c:set>
 <c:set var="friendRequestList" value="${requestScope.friendRequestList}"></c:set>
 <c:set var="friendList" value="${requestScope.friendList}"></c:set>
 <!DOCTYPE html>
@@ -151,21 +151,21 @@
                 <div class="card border-0 text-center pt-3 mb-4">
                     <div class="card-body">
                         <div class="card-user-avatar">
-                            <c:if test="${user.picture eq null}" var="flag">
+                            <c:if test="${friend.picture eq null}" var="flag">
                                 <img src="${path}/static/web/images/user.png" alt="avatar"/>
                             </c:if>
                             <c:if test="${not flag}">
-                                <img src="${path}/static/uploadImages/${user.picture}" alt="avatar" style="width: 140px; height: 140px"/>
+                                <img src="${path}/static/uploadImages/${friend.picture}" alt="avatar" style="width: 140px; height: 140px"/>
                             </c:if>
                             <a href="${path}/userCenter/updatePicture">
                                 <button type="button" class="btn btn-secondary btn-sm"><i class="zmdi zmdi-edit"></i></button>
                             </a>
                         </div>
                         <div class="card-user-detail mt-4">
-                            <h4>${user.name}</h4>
+                            <h4>${friend.name}</h4>
                             <span class="text-muted"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
                                                         data-cfemail="15787c767d707979703b726770707b557278747c793b767a78">[email&#160;protected]</a></span>
-                            <p>+86 ${user.phone.substring(0,3)}****${user.phone.substring(7,11)} - 中国 (CHINA)</p>
+                            <p>+86 ${friend.phone.substring(0,3)}****${friend.phone.substring(7,11)} - 中国 (CHINA)</p>
                             <div class="social">
                                 <a class="icon p-2" href="#" data-toggle="tooltip" title="Facebook"><i
                                         class="zmdi zmdi-facebook-box"></i></a>

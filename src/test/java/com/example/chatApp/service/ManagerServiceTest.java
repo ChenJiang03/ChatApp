@@ -61,4 +61,11 @@ public class ManagerServiceTest
         managerIdList.add(10);
         managerService.BatchDeleteByPrimaryKey(managerIdList);
     }
+
+    @Test
+    public void testDelete()
+    {
+        int a = managerService.delete(7);
+        System.out.println(a);
+    }
 }

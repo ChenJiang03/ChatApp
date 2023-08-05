@@ -41,8 +41,8 @@
 <!-- 登录body  end -->
 
 <!-- 登录页面底部 -->
-<div class="logFoot">
-    <p class="p1">版权所有：畅聊App</p>
+<div class="logFoot" style="margin-top: 30px">
+    <p class="p1">@版权所有：畅聊App</p>
     <%--    <p class="p2">123456789</p>--%>
     <img src="${path}/static/web/images/logo.png" alt="" style="width: 200px">
 </div>

@@ -77,7 +77,7 @@
                 </div>
                 <div class="bbD">
                         <input class="user-btn" onclick="history.go(-1)" value="返回" type="button">
-                        <input class="user-btn" value="查看用户好友列表" type="button">
+                        <a href="${path}/manage/user/friendList?id=${friend.id}"><input class="user-btn" value="查看用户好友列表" type="button"></a>
                         <input class="user-btn" value="查看用户朋友圈列表" type="button">
 
                 </div>

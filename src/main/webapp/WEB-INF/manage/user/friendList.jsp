@@ -76,6 +76,8 @@
     </div>
 
     <div class="page">
+        <button class="userbtn" onclick="history.go(-1)">返回</button>
+
         <!-- user页面样式 -->
         <div class="connoisseur">
             <!-- user 表格 显示 -->
@@ -90,7 +92,7 @@
                         <td width="150px" class="tdColor">电话号码</td>
                         <td width="300px" class="tdColor">操作</td>
                     </tr>
-                    <c:forEach items="${friendList.list}" var="friend">
+                    <c:forEach items="${friendList}" var="friend">
                         <tr height="40px" id="tr_${friend.id}">
                             <td><input type="checkbox" class="check" data-id="${friend.id}"></td>
                             <td>${friend.id}</td>

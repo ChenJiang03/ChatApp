@@ -72,7 +72,7 @@
 <div id="pageAll">
     <div class="pageTop">
         <div class="page">
-            <img src="${path}/static/manage/img/coin02.png"/><span>用户管理&nbsp;-</span>&nbsp;用户列表
+            <img src="${path}/static/manage/img/coin02.png"/><span>用户管理&nbsp;-</span>&nbsp;用户黑名单
         </div>
     </div>
 

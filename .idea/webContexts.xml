@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/manage/user/friendList.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/manage/user" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/userBlog/post.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/userBlog" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/userCenter/contacts.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/userCenter" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/userCenter/updateInfo.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/userCenter" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/login.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web" />

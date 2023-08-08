@@ -18,7 +18,7 @@
     <meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>异步 </title>
+    <title>朋友圈</title>
     <link href="${path}/static/blog/assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link title="style2" href="${path}/static/blog/assets/css/style.css" rel="stylesheet"/>
     <link href="${path}/static/blog/assets/css/nprogress.css" rel="stylesheet"/>
@@ -52,19 +52,30 @@
         </div>
         <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav header-menu">
+
                 <li>
-                    <a href="index.html">
-                        首页
+                    <a href="${path}/userCenter/contacts">
+                        <img src="${path}/static/blog/assets/img/homeLogo.jpg" alt="" style="width: 35px">首页
                     </a>
                 </li>
                 <li>
-                    <a href="about.html">
-                        我的朋友圈
+                    <a href="${path}/userBlog/myPost">
+                        <img src="${path}/static/blog/assets/img/myLogo.jpeg" alt="" style="width: 35px">我的发布
                     </a>
                 </li>
                 <li>
                     <a href="blog.html">
-                        朋友圈设置
+                        <img src="${path}/static/blog/assets/img/settingLogo.jpg" alt="" style="width: 35px">设置
+                    </a>
+                </li>
+                <li>
+                    <a href="${path}/userBlog/blogs">
+                        <img src="${path}/static/blog/assets/img/blogLogo.png" alt="" style="width: 35px">朋友圈
+                    </a>
+                </li>
+                <li>
+                    <a href="${path}/userBlog/post">
+                        <img src="${path}/static/blog/assets/img/postBlog.jpeg" alt="" style="width: 35px">发布朋友圈
                     </a>
                 </li>
             </ul>
@@ -78,93 +89,6 @@
             <li>
                 <a href="" class="simptip-position-right simptip-smooth simptip-movable"
                    data-toggle="tooltip" data-placement="right" title="登陆">
-                    <img src="${path}/static/blog/assets/img/login.png">
-                    <span>
-                自定义链接
-              </span>
-                    <div class="clearfix">
-                    </div>
-                </a>
-            </li>
-            <li data-toggle="tooltip" data-placement="right" title="博客">
-                <a href="" class="simptip-position-right simptip-smooth simptip-movable"
-                   target="_black">
-                    <img src="${path}/static/blog/assets/img/login.png">
-                    <span>
-                注册
-              </span>
-                    <div class="clearfix">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="" class="simptip-position-right simptip-smooth simptip-movable style1" id="style1">
-                    <img src="${path}/static/blog/assets/img/login.png">
-                    <span>
-                自定义链接
-              </span>
-                    <div class="clearfix">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="" class="simptip-position-right simptip-smooth simptip-movable style2"
-                   data-tooltip="white theme" id="style2">
-                    <img src="${path}/static/blog/assets/img/login.png">
-                    <span>
-                自定义链接
-              </span>
-                    <div class="clearfix">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="" class="simptip-position-right simptip-smooth simptip-movable"
-                   data-tooltip="自定义链接">
-                    <img src="${path}/static/blog/assets/img/login.png">
-                    <span>
-                自定义链接
-              </span>
-                    <div class="clearfix">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="" class="simptip-position-right simptip-smooth simptip-movable"
-                   data-tooltip="自定义链接">
-                    <img src="${path}/static/blog/assets/img/login.png">
-                    <span>
-                自定义链接
-              </span>
-                    <div class="clearfix">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="" class="simptip-position-right simptip-smooth simptip-movable"
-                   data-tooltip="自定义链接">
-                    <img src="${path}/static/blog/assets/img/login.png">
-                    <span>
-                自定义链接
-              </span>
-                    <div class="clearfix">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="" class="simptip-position-right simptip-smooth simptip-movable"
-                   data-tooltip="自定义链接">
-                    <img src="${path}/static/blog/assets/img/login.png">
-                    <span>
-                自定义链接
-              </span>
-                    <div class="clearfix">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="" class="simptip-position-right simptip-smooth simptip-movable"
-                   data-tooltip="自定义链接">
                     <img src="${path}/static/blog/assets/img/login.png">
                     <span>
                 自定义链接

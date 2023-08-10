@@ -17,6 +17,8 @@ public interface BlogPictureMapper {
 
     BlogPicture selectByPrimaryKey(Integer id);
 
+    List<BlogPicture> selectByBlogId(Integer id);
+
     int updateByPrimaryKeySelective(BlogPicture record);
 
     int updateByPrimaryKey(BlogPicture record);

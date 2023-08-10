@@ -10,6 +10,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <c:set var="blogList" value="${requestScope.blogList}"></c:set>
+<c:set var="blogPicMap" value="${requestScope.blogPicMap}"></c:set>
 <!DOCTYPE html>
 <html lang="cn" dir="ltr" class="no-js">
 
@@ -158,6 +159,13 @@
                         </a>
                     </span>
                 </div>
+                <div class="post-picture" style="width: 350px">
+                    <c:forEach var="blogPic" items="${blogPicMap[blog.id.toString()]}">
+                        <a href="${path}/static/uploadImages/${blogPic.picture}" data-lightbox="image-group">
+                            <img src="${path}/static/uploadImages/${blogPic.picture}" style="width: 100px; height: 100px" alt="">
+                        </a>
+                    </c:forEach>
+                </div>
                 <div class="post-content">
                     ${blog.content}
                 </div>
@@ -222,6 +230,12 @@
 
         })
     })
+
+//    lightbox实现预览图片功能
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true
+    });
 
 </script>
 </body>

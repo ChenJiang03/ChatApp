@@ -7,4 +7,6 @@ import java.util.List;
 public interface BlogPictureService extends CommonService<BlogPicture>
 {
     void insert(Integer blogId, List<String> fileNames);
+
+    List<BlogPicture> selectByBlogId(Integer id);
 }

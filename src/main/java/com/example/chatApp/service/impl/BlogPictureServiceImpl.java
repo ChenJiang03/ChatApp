@@ -27,6 +27,12 @@ public class BlogPictureServiceImpl implements BlogPictureService
     }
 
     @Override
+    public List<BlogPicture> selectByBlogId(Integer id)
+    {
+        return blogPictureMapper.selectByBlogId(id);
+    }
+
+    @Override
     public void update(BlogPicture object)
     {
 

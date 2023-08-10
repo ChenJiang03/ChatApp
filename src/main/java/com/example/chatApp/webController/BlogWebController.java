@@ -16,10 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Controller
 @RequestMapping("/userBlog")
@@ -118,5 +115,12 @@ public class BlogWebController
         User user = (User) session.getAttribute("user");
         List<Blog> blogList = blogService.selectByUserId(user.getId());
         model.addAttribute("blogList", blogList);
+        Map<String, List<BlogPicture>> blogPicMap = new HashMap<>();
+        for (Blog blog : blogList)
+        {
+            List<BlogPicture> blogPictureList = blogPictureService.selectByBlogId(blog.getId());
+            blogPicMap.put(blog.getId().toString(), blogPictureList);
+        }
+        model.addAttribute("blogPicMap",blogPicMap);
     }
 }

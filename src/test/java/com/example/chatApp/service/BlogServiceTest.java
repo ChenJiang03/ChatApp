@@ -20,6 +20,6 @@ public class BlogServiceTest
     public void testSelectByUserId()
     {
         List<Blog> blogs = blogService.selectByUserId(6);
-        System.out.println(blogs);
+        System.out.println(blogs.get(0));
     }
 }

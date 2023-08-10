@@ -118,6 +118,7 @@
             <div class="post-content">
                 <form method="post" action="${path}/userBlog/post" id="form1" class="contact-form" enctype="multipart/form-data">
 
+                    <input type="hidden" name="pictures" id="pictures">
                     <div>
                         朋友圈可见范围：<br/>
                         <select name="viewScope" id="viewScope">
@@ -251,6 +252,25 @@
     });
 
     $("#submitBtn").click(function (){
+
+        var formData = new FormData();
+        $.each(imageList, function (key,value){
+            formData.append("uploadPictures",value);
+        });
+        $.ajax({
+            type:'post',
+            url: '${path}/userBlog/postPicture',
+            async: false,
+            cache: false,
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType:"json"
+        }).success(function(data) {
+            console.log(data);
+            $("#pictures").val(data.join(","));
+            console.log(res.msg,'-------上传成功')
+        });
         $("#form1").submit();
     });
 

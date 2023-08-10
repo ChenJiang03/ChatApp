@@ -161,28 +161,6 @@
                 <div class="post-content">
                     ${blog.content}
                 </div>
-                <div class="meta-box">
-                    <span class="cat-links">
-                        <i class="fa fa-navicon">
-                        </i>
-                        <b>
-                          分类:
-                        </b>
-                        <a href="">
-                          测试
-                        </a>
-                    </span>
-                    <span class="tag-links">
-                        <i class="fa fa-tags">
-                        </i>
-                        <b>
-                        标签:
-                        </b>
-                        <a href="" rel="tag">
-                        异步
-                        </a>
-                    </span>
-                </div>
             </div>
         </div>
     </c:forEach>

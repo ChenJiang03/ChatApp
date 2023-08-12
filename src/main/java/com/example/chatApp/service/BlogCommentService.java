@@ -1,5 +1,8 @@
 package com.example.chatApp.service;
 
-public interface BlogCommentService
+import com.example.chatApp.pojo.BlogComment;
+
+public interface BlogCommentService extends CommonService<BlogComment>
 {
+    int insertCommentToBlog(BlogComment record);
 }

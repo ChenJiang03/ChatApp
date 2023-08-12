@@ -1,6 +1,7 @@
 package com.example.chatApp.webController;
 
 import com.example.chatApp.pojo.Blog;
+import com.example.chatApp.pojo.BlogComment;
 import com.example.chatApp.pojo.BlogPicture;
 import com.example.chatApp.pojo.User;
 import com.example.chatApp.service.BlogPictureService;
@@ -122,5 +123,17 @@ public class BlogWebController
             blogPicMap.put(blog.getId().toString(), blogPictureList);
         }
         model.addAttribute("blogPicMap",blogPicMap);
+    }
+
+    @PostMapping("postCommentToBlog")
+    @ResponseBody
+    public void postCommentToBlog(Integer blogId, String content, HttpSession session)
+    {
+        User user = (User) session.getAttribute("user");
+        BlogComment blogComment = new BlogComment();
+        blogComment.setBlogId(blogId);
+        blogComment.setContent(content);
+        blogComment.setUserId(user.getId());
+
     }
 }

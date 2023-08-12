@@ -90,6 +90,7 @@
     <div class="left_menu">
         <ul class="menu_link">
             <li>
+
                 <a href="" class="simptip-position-right simptip-smooth simptip-movable"
                    data-toggle="tooltip" data-placement="right" title="登陆">
                     <img src="${path}/static/blog/assets/img/login.png">
@@ -114,6 +115,7 @@
                                                                            alt=""/></a>
                     <img src="${path}/static/blog/assets/img/owl.jpg" data-thumb="assets/img/owl.jpg" alt=""/>
                     <img src="${path}/static/blog/assets/img/owl2.jpg" data-thumb="assets/img/owl2.jpg" alt=""/>
+
                 </div>
             </div>
         </div>
@@ -168,6 +170,12 @@
                 </div>
                 <div class="post-content">
                     ${blog.content}
+                </div>
+
+                <div class="post-comment" style="background-color: #d7d8da; width: 85%">
+                    <p>评论：</p>
+                    <textarea name="comment" id="comment" cols="50" rows="1" style="margin-left: 20px"></textarea>
+                    <button id="commentToBlogBtn" data-id="${blog.id}">发送</button>
                 </div>
             </div>
         </div>
@@ -237,6 +245,16 @@
         'wrapAround': true
     });
 
+</script>
+<script type="text/javascript">
+    $("#commentToBlogBtn").click(function (){
+        var blogId = this.data("id");
+        var content = $("#comment").val();
+        $.get("${path}/userBlog/postCommentToBlog", {blogId: blogId, content: content},
+        function (data){
+
+        });
+    });
 </script>
 </body>
 

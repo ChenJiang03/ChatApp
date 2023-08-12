@@ -1,8 +1,9 @@
 package com.example.chatApp.pojo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
 * Created by Mybatis Generator 2023/07/16
@@ -13,7 +14,7 @@ public class BlogComment implements Serializable {
 
     private Integer userId;
 
-    private Integer content;
+    private String content;
 
     private Integer blogId;
 

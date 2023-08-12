@@ -28,6 +28,8 @@ test
     <img src="${path}/static/captchaImage/Pic2.jpg" alt="Image" style="width: 80px">
 </a>
 
+<a href="${path}/static/captchaImage/Pic3.jpg"> <img src="${path}/static/captchaImage/Pic3.jpg"></a>
+
 
 </body>
 </html>

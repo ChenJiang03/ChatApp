@@ -10,6 +10,8 @@ public interface BlogCommentMapper {
 
     int insert(BlogComment record);
 
+    int insertCommentToBlog(BlogComment record);
+
     int insertSelective(BlogComment record);
 
     BlogComment selectByPrimaryKey(Integer id);

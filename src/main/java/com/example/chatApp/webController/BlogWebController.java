@@ -4,6 +4,7 @@ import com.example.chatApp.pojo.Blog;
 import com.example.chatApp.pojo.BlogComment;
 import com.example.chatApp.pojo.BlogPicture;
 import com.example.chatApp.pojo.User;
+import com.example.chatApp.service.BlogCommentService;
 import com.example.chatApp.service.BlogPictureService;
 import com.example.chatApp.service.BlogService;
 import org.apache.commons.io.FilenameUtils;
@@ -28,6 +29,9 @@ public class BlogWebController
 
     @Resource
     BlogPictureService blogPictureService;
+
+    @Resource
+    BlogCommentService blogCommentService;
 
     @GetMapping("blogs")
     public void showBlogs()
@@ -125,15 +129,17 @@ public class BlogWebController
         model.addAttribute("blogPicMap",blogPicMap);
     }
 
-    @PostMapping("postCommentToBlog")
+    @GetMapping("postCommentToBlog")
     @ResponseBody
-    public void postCommentToBlog(Integer blogId, String content, HttpSession session)
+    public Integer postCommentToBlog(Integer blogId, String content, HttpSession session)
     {
         User user = (User) session.getAttribute("user");
         BlogComment blogComment = new BlogComment();
         blogComment.setBlogId(blogId);
         blogComment.setContent(content);
         blogComment.setUserId(user.getId());
-
+        blogCommentService.insertCommentToBlog(blogComment);
+        //返回刚刚发布的comment的ID
+        return blogCommentService.selectCommentToBlogByBlogIdOrderedByInputTime(blogId).get(0).getId();
     }
 }

@@ -31,6 +31,14 @@
         from blog_comment
         where id = #{id,jdbcType=INTEGER}
     </select>
+
+    <select id="selectCommentToBlogByBlogIdOrderedByInputTime" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"></include>
+        from blog_comment
+        where blog_id = #{id} and enable = 1
+        order by input_time desc
+    </select>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         <!--
           WARNING - @mbg.generated
@@ -153,4 +161,5 @@
         `enable` = #{enable,jdbcType=BIT}
         where id = #{id,jdbcType=INTEGER}
     </update>
+
 </mapper>

@@ -172,10 +172,15 @@
                     ${blog.content}
                 </div>
 
-                <div class="post-comment" style="background-color: #d7d8da; width: 85%">
-                    <p>评论：</p>
-                    <textarea name="comment" id="comment" cols="50" rows="1" style="margin-left: 20px"></textarea>
-                    <button id="commentToBlogBtn" data-id="${blog.id}">发送</button>
+                <div class="comments-to-post" style="background-color: #d7d8da; width: 85%">
+                    <div class="post-comment">
+                        <p>评论：</p>
+                        <textarea name="comment" id="comment" cols="50" rows="1" style="margin-left: 20px"></textarea>
+                        <button id="commentToBlogBtn" data-id="${blog.id}">发送</button>
+                    </div>
+                    <div class="show-comments">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -211,6 +216,7 @@
     </footer>
 </div>
 <script src="${path}/static/blog/assets/js/bootstrap.min.js"></script>
+<script src="${path}/static/web/vendor/jquery/jquery-3.6.4.min.js"></script>
 <script>
     /*banner 初始化*/
     $(window).load(function () {
@@ -248,11 +254,18 @@
 </script>
 <script type="text/javascript">
     $("#commentToBlogBtn").click(function (){
-        var blogId = this.data("id");
+        var blogId = $(this).data("id");
         var content = $("#comment").val();
         $.get("${path}/userBlog/postCommentToBlog", {blogId: blogId, content: content},
         function (data){
-
+            var comment = $("<div>");
+            comment.addClass("reply-to-comment");
+            var contentScope = $("<p>"+content+"</p>");
+            var reply = $("<button>回复</button>");
+            reply.data("commentId",data);
+            comment.append(contentScope);
+            comment.append(reply);
+            $(".show-comments").append(comment);
         });
     });
 </script>

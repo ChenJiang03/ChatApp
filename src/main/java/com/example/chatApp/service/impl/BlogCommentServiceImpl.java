@@ -3,10 +3,12 @@ package com.example.chatApp.service.impl;
 import com.example.chatApp.mapper.BlogCommentMapper;
 import com.example.chatApp.pojo.BlogComment;
 import com.example.chatApp.service.BlogCommentService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Service
 public class BlogCommentServiceImpl implements BlogCommentService
 {
     @Resource
@@ -16,6 +18,12 @@ public class BlogCommentServiceImpl implements BlogCommentService
     public int insertCommentToBlog(BlogComment record)
     {
         return blogCommentMapper.insertCommentToBlog(record);
+    }
+
+    @Override
+    public List<BlogComment> selectCommentToBlogByBlogIdOrderedByInputTime(Integer id)
+    {
+        return blogCommentMapper.selectCommentToBlogByBlogIdOrderedByInputTime(id);
     }
 
     @Override

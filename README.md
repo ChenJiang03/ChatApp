@@ -1,7 +1,7 @@
 # Initial Deployment of Online Chat Software
 
 ## **Project Overview:**
-# Project is still under development phase
+### Project is still under development phase
 1. **Registration & Login**: Users need to register before logging in, or can log in via QQ or WeChat.
 2. **Add/Delete Friends**: Users can send friend requests and choose to accept or decline. If unhappy with the chat, they can delete the friend.
 3. **Chat**: After accepting the friend request, the two friends can chat.
